@@ -1,0 +1,86 @@
+---
+import Layout from "../layouts/Layout.astro";
+import InformationTable from "../components/InformationTable.vue";
+import "../styles/global.css";
+import MapComponent from "../components/MapComponent.vue";
+
+const openingHours = [
+    ["Pondělí", "8:00-15:30"],
+    ["Úterý", "8:00-15:30"],
+    ["Středa", "8:00-15:30"],
+    ["Čtvrtek", "8:00-15:30"],
+    ["Pátek", "8:00-15:30"],
+    ["Sobota", "9:00-12:00"],
+    ["Neděle", "Zavřeno"],
+];
+const contacts = [
+    ["Mobil", "+420 603 515 656"],
+    ["E-mail", "1podivinskaludmila@email.cz"],
+    ["IČO", "70011231"],
+];
+---
+
+<Layout title="Welcome to Astro.">
+    <main class="content">
+        <section class="content__opening_hours" id="opening-hours">
+            <h2>Kdy nás můžete zastihnout?</h2>
+            <InformationTable information={openingHours} />
+        </section>
+        <section>
+            <h2>Kde nás najít?</h2>
+            <MapComponent client:visible />
+        </section>
+        <section class="content__contact">
+            <h2>Kontakt</h2>
+            <div class="information-table">
+                <div class="information-table__row">
+                    <div>E-mail</div>
+                    <a href="mailto: 1podivinskaludmila@email.cz"
+                        >1podivinskaludmila@email.cz</a
+                    >
+                </div>
+                <div class="information-table__row">
+                    <div>Mobil</div>
+                    <div>+420 603 515 656</div>
+                </div>
+                <div class="information-table__row">
+                    <div>IČO</div>
+                    <div>70011231</div>
+                </div>
+            </div>
+        </section>
+    </main>
+</Layout>
+
+<style is:global>
+    :root {
+        --content-padding: 6rem;
+        --section-vertical-padding: 3rem;
+    }
+
+    .content {
+        text-align: center;
+        margin: auto;
+    }
+    .content section {
+        padding-left: var(--content-padding);
+        padding-right: var(--content-padding);
+        background-color: var(--n6);
+        padding-top: var(--section-vertical-padding);
+        padding-bottom: var(--section-vertical-padding);
+        scroll-margin-top: 2em;
+    }
+    .content > :nth-child(odd) {
+        background-color: var(--n7);
+    }
+    .content__opening_hours h2 {
+        margin-bottom: 0.4rem;
+    }
+    .contact__location iframe {
+        margin-block-start: 1em;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+    }
+</style>
