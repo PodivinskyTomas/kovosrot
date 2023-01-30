@@ -1,8 +1,8 @@
 <template>
     <nav ref="nav">
-        <div style="width: 50%;">
+        <a href="/" class="nav__title">
             <h3>Výkup kovového opadu Litovel</h3>
-        </div>
+        </a>
         <div>
             <a href="#contact" class="app-nav__link">Kontakt</a>
             <a href="#where-to-find-us" class="app-nav__link">Kde nás najít?</a>
@@ -27,6 +27,12 @@ nav {
     background-color: var(--n8);
     padding-left: var(--content-padding);
     padding-right: var(--content-padding);
+}
+
+.nav__title {
+    width: 50%;
+    text-decoration: none;
+    color: black;
 }
 
 .app-nav__link {
