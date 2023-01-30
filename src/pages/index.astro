@@ -22,6 +22,9 @@ const contacts = [
 
 <Layout title="Welcome to Astro.">
     <main class="content">
+        <section class="content__news">
+            <h2>Aktuality</h2>
+        </section>
         <section class="content__opening_hours">
             <h2 id="opening-hours">Kdy nás můžete zastihnout?</h2>
             <InformationTable information={openingHours} />
@@ -29,6 +32,7 @@ const contacts = [
         <section>
             <h2 id="where-to-find-us">Kde nás najít?</h2>
             <MapComponent client:visible />
+            <p>Cholinská 1276/1, 784 01 Litovel</p>
         </section>
         <section class="content__contact">
             <h2 id="contact">Kontakt</h2>
@@ -41,7 +45,7 @@ const contacts = [
                 </div>
                 <div class="information-table__row">
                     <div>Mobil</div>
-                    <div>+420 603 515 656</div>
+                    <a href="tel: +420 603 515 656">+420 603 515 656</a>
                 </div>
                 <div class="information-table__row">
                     <div>IČO</div>
@@ -65,7 +69,7 @@ const contacts = [
     .content section {
         padding-left: var(--content-padding);
         padding-right: var(--content-padding);
-        background-color: var(--n6);
+        background-color: var(--n5);
         padding-top: var(--section-vertical-padding);
         padding-bottom: var(--section-vertical-padding);
     }
@@ -73,16 +77,31 @@ const contacts = [
         scroll-margin-top: 4em;
     }
     .content > :nth-child(odd) {
-        background-color: var(--n7);
+        background-color: var(--n6);
     }
     .content__opening_hours h2 {
         margin-bottom: 0.4rem;
     }
-    .contact__location iframe {
-        margin-block-start: 1em;
+    #where-to-find-us {
+        margin-bottom: 1rem;
     }
     body {
         padding: 0;
         margin: 0;
+    }
+    @media only screen and (max-width: 1000px) {
+        :root {
+            --content-padding: 5rem;
+        }
+    }
+    @media only screen and (max-width: 920px) {
+        :root {
+            --content-padding: 4rem;
+        }
+    }
+    @media only screen and (max-width: 870px) {
+        :root {
+            --content-padding: 2rem;
+        }
     }
 </style>

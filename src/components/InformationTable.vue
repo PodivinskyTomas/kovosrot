@@ -23,7 +23,7 @@ export default {
     display: flex;
     flex-direction: column;
     margin: auto;
-    width: 310px;
+    width: 260px;
 }
 
 .information-table__row {

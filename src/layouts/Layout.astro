@@ -22,6 +22,8 @@ import AppFooter from "../components/AppFooter.vue";
         />
         <meta name="author" content="Tomáš Podivínský" />
         <title>{title}</title>
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+        ></script>
     </head>
     <body>
         <AppHeader />
@@ -29,6 +31,17 @@ import AppFooter from "../components/AppFooter.vue";
         <slot />
         <AppFooter />
     </body>
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", (user) => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    </script>
 </html>
 <style is:global>
     html {

@@ -1,6 +1,6 @@
 <template>
     <footer>
-        <p>Webdesign by Tomáš Podivínský</p>
+        <p>Vytvořil Tomáš Podivínský</p>
     </footer>
 </template>
 <script lang="ts">
