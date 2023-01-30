@@ -2,8 +2,10 @@
 import Layout from "../../layouts/Layout.astro";
 import "../../styles/global.css";
 
-export async function getStaticPaths() {
-    return (await Astro.glob("../news/*.md")).map((markdownFile) => {
+export const articles = await Astro.glob("../news/*.md");
+
+export function getStaticPaths() {
+    return articles.map((markdownFile) => {
         return {
             params: {
                 article: markdownFile.url?.substring("/news/".length),
@@ -13,11 +15,19 @@ export async function getStaticPaths() {
 }
 
 const { article } = Astro.params;
-console.log(article);
+
+const articlePath = "/news/" + article;
+const currentArticle = articles.find((article) => {
+    console.log(article.url, articlePath);
+    return article.url == articlePath;
+});
 ---
 
 <Layout title="Welcome to Astro.">
-    <section>{article}</section>
+    <section>
+        <h2>{currentArticle?.frontmatter.title}</h2>
+        <p>{currentArticle?.rawContent.call(this)}</p>
+    </section>
 </Layout>
 
 <style is:global></style>
