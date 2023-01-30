@@ -1,0 +1,23 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+
+export async function getStaticPaths() {
+    return (await Astro.glob("../news/*.md")).map((markdownFile) => {
+        return {
+            params: {
+                article: markdownFile.url?.substring("/news/".length),
+            },
+        };
+    });
+}
+
+const { article } = Astro.params;
+console.log(article);
+---
+
+<Layout title="Welcome to Astro.">
+    <section>{article}</section>
+</Layout>
+
+<style is:global></style>

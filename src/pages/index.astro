@@ -37,93 +37,49 @@ const openingHours = [
 ---
 
 <Layout title="Welcome to Astro.">
-    <main class="content">
-        {
-            news != null && (
-                <section class="content__news">
-                    <h2 id="news">Aktuality</h2>
-                    <AppNews files={news} />
-                </section>
-            )
-        }
-        <section class="content__opening_hours">
-            <h2 id="opening-hours">Kdy nás můžete zastihnout?</h2>
-            <InformationTable information={openingHours} />
-        </section>
-        <section>
-            <h2 id="where-to-find-us">Kde nás najít?</h2>
-            <MapComponent client:visible />
-            <p>Cholinská 1276/1, 784 01 Litovel</p>
-        </section>
-        <section class="content__contact">
-            <h2 id="contact">Kontakt</h2>
-            <div class="information-table">
-                <div class="information-table__row">
-                    <div>E-mail</div>
-                    <a href="mailto: 1podivinskaludmila@email.cz"
-                        >1podivinskaludmila@email.cz</a
-                    >
-                </div>
-                <div class="information-table__row">
-                    <div>Mobil</div>
-                    <a href="tel: +420 603 515 656">+420 603 515 656</a>
-                </div>
-                <div class="information-table__row">
-                    <div>IČO</div>
-                    <div>70011231</div>
-                </div>
+    {
+        news != null && (
+            <section class="content__news">
+                <h2 id="news">Aktuality</h2>
+                <AppNews files={news} />
+            </section>
+        )
+    }
+    <section class="content__opening_hours">
+        <h2 id="opening-hours">Kdy nás můžete zastihnout?</h2>
+        <InformationTable information={openingHours} />
+    </section>
+    <section>
+        <h2 id="where-to-find-us">Kde nás najít?</h2>
+        <MapComponent client:visible />
+        <p>Cholinská 1276/1, 784 01 Litovel</p>
+    </section>
+    <section class="content__contact">
+        <h2 id="contact">Kontakt</h2>
+        <div class="information-table">
+            <div class="information-table__row">
+                <div>E-mail</div>
+                <a href="mailto: 1podivinskaludmila@email.cz"
+                    >1podivinskaludmila@email.cz</a
+                >
             </div>
-        </section>
-    </main>
+            <div class="information-table__row">
+                <div>Mobil</div>
+                <a href="tel: +420 603 515 656">+420 603 515 656</a>
+            </div>
+            <div class="information-table__row">
+                <div>IČO</div>
+                <div>70011231</div>
+            </div>
+        </div>
+    </section>
 </Layout>
 
 <style is:global>
-    :root {
-        --content-padding: 6rem;
-        --section-vertical-padding: 3rem;
-    }
-
-    .content {
-        text-align: center;
-        margin: auto;
-    }
-    .content section {
-        padding-left: var(--content-padding);
-        padding-right: var(--content-padding);
-        background-color: var(--n5);
-        padding-top: var(--section-vertical-padding);
-        padding-bottom: var(--section-vertical-padding);
-    }
-    .content section h2 {
-        scroll-margin-top: 4em;
-        margin-bottom: 0.4rem;
-    }
-    .content > :nth-child(odd) {
-        background-color: var(--n6);
-    }
     #news {
         margin-bottom: 0.8rem;
     }
     #where-to-find-us {
         margin-bottom: 1rem;
-    }
-    body {
-        padding: 0;
-        margin: 0;
-    }
-    @media only screen and (max-width: 1000px) {
-        :root {
-            --content-padding: 5rem;
-        }
-    }
-    @media only screen and (max-width: 920px) {
-        :root {
-            --content-padding: 4rem;
-        }
-    }
-    @media only screen and (max-width: 870px) {
-        :root {
-            --content-padding: 2rem;
-        }
     }
 </style>

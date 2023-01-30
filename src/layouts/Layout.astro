@@ -30,11 +30,51 @@ import AppFooter from "../components/AppFooter.vue";
     <body>
         <AppHeader />
         <AppNav client:only />
-        <slot />
+        <main class="content">
+            <slot />
+        </main>
         <AppFooter />
     </body>
 </html>
 <style is:global>
+    :root {
+        --content-padding: 6rem;
+        --section-vertical-padding: 3rem;
+    }
+
+    .content {
+        text-align: center;
+        margin: auto;
+    }
+    .content section {
+        padding-left: var(--content-padding);
+        padding-right: var(--content-padding);
+        background-color: var(--n5);
+        padding-top: var(--section-vertical-padding);
+        padding-bottom: var(--section-vertical-padding);
+    }
+    .content section h2 {
+        scroll-margin-top: 4em;
+        margin-bottom: 0.4rem;
+    }
+    .content > section:nth-of-type(odd) {
+        background-color: var(--n6);
+    }
+    @media only screen and (max-width: 1000px) {
+        :root {
+            --content-padding: 5rem;
+        }
+    }
+    @media only screen and (max-width: 920px) {
+        :root {
+            --content-padding: 4rem;
+        }
+    }
+    @media only screen and (max-width: 870px) {
+        :root {
+            --content-padding: 2rem;
+        }
+    }
     html {
         font-family: system-ui, sans-serif;
         background-color: #f6f6f6;

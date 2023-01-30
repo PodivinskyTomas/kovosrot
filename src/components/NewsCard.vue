@@ -1,5 +1,5 @@
 <template>
-    <div class="news-card">
+    <a href="#" class="news-card">
         <div class="news-card__date-box">
             <h3>{{ day }}</h3>
             <h3>{{ month }}, {{ year }}</h3>
@@ -8,7 +8,7 @@
             <h3>{{ file.frontmatter.title }}</h3>
             <p>{{ fileContent }}</p>
         </div>
-    </div>
+    </a>
 </template>
 <script lang="ts">
 export default {
@@ -54,6 +54,13 @@ export default {
     display: flex;
     box-sizing: border-box;
     word-wrap: break-word;
+    transition: 0.4s ease;
+    text-decoration: none;
+    color: black;
+}
+
+.news-card:hover {
+    box-shadow: 0px 0px 10px 0px grey;
 }
 
 .news-card__date-box {
