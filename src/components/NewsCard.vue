@@ -1,0 +1,72 @@
+<template>
+    <div class="news-card">
+        <div class="news-card__date-box">
+            <h3>{{ day }}</h3>
+            <h3>{{ month }}, {{ year }}</h3>
+        </div>
+        <div class="news-card__content">
+            <h3>{{ file.frontmatter.title }}</h3>
+            <p>{{ fileContent }}</p>
+        </div>
+    </div>
+</template>
+<script lang="ts">
+export default {
+    name: "NewsCard",
+    computed: {
+        fileContent(): string {
+            return this.file.rawContent.call(this);
+        }
+    },
+    props: {
+        file: {
+            type: Object,
+            required: true
+        }
+    },
+    created() {
+        let date: string = this.file.frontmatter.date;
+        date = date.substring(0, date.indexOf("T")).replaceAll("-", ".");
+        const dateParts = date.split(".");
+        this.day = dateParts[2];
+        this.month = dateParts[1];
+        this.year = dateParts[0];
+    },
+    data() {
+        return {
+            day: "",
+            month: "",
+            year: ""
+        }
+    }
+}
+</script>
+<style scoped>
+.news-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+}
+
+.news-card__date-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--p1);
+    color: var(--white);
+    padding: 0.5rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.news-card__content {
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    text-align: left;
+    max-width: 200px;
+}
+
+.news-card__content h3 {
+    margin-bottom: 0.5rem;
+}
+</style>

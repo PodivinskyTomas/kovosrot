@@ -23,7 +23,7 @@ export default {
 }
 
 header {
-    background-image: url("../../public/header-photo.jpeg");
+    background-image: url("/header-photo.jpeg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;

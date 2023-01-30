@@ -3,6 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import InformationTable from "../components/InformationTable.vue";
 import "../styles/global.css";
 import MapComponent from "../components/MapComponent.vue";
+import AppNews from "../components/AppNews.vue";
+
+const news = await Astro.glob("../pages/news/*.md");
 
 const openingHours = [
     ["Pondělí", "8:00-15:30"],
@@ -13,17 +16,13 @@ const openingHours = [
     ["Sobota", "9:00-12:00"],
     ["Neděle", "Zavřeno"],
 ];
-const contacts = [
-    ["Mobil", "+420 603 515 656"],
-    ["E-mail", "1podivinskaludmila@email.cz"],
-    ["IČO", "70011231"],
-];
 ---
 
 <Layout title="Welcome to Astro.">
     <main class="content">
         <section class="content__news">
-            <h2>Aktuality</h2>
+            <h2 id="news">Aktuality</h2>
+            <AppNews files={news} />
         </section>
         <section class="content__opening_hours">
             <h2 id="opening-hours">Kdy nás můžete zastihnout?</h2>
@@ -75,12 +74,13 @@ const contacts = [
     }
     .content section h2 {
         scroll-margin-top: 4em;
+        margin-bottom: 0.4rem;
     }
     .content > :nth-child(odd) {
         background-color: var(--n6);
     }
-    .content__opening_hours h2 {
-        margin-bottom: 0.4rem;
+    #news {
+        margin-bottom: 0.8rem;
     }
     #where-to-find-us {
         margin-bottom: 1rem;

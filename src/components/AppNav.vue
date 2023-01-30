@@ -4,9 +4,10 @@
             <h3>Výkup kovového opadu Litovel</h3>
         </div>
         <div>
-            <a href="#opening-hours" class="app-nav__link">Otevírací doba</a>
-            <a href="#where-to-find-us" class="app-nav__link">Kde nás najít?</a>
             <a href="#contact" class="app-nav__link">Kontakt</a>
+            <a href="#where-to-find-us" class="app-nav__link">Kde nás najít?</a>
+            <a href="#opening-hours" class="app-nav__link">Provozní doba</a>
+            <a href="#news" class="app-nav__link">Aktuality</a>
         </div>
     </nav>
 </template>
@@ -38,7 +39,7 @@ nav {
 }
 
 .app-nav__link:hover {
-    background-color: var(--n2);
-    color: var(--n7);
+    background-color: var(--p1);
+    color: var(--white);
 }
 </style>
