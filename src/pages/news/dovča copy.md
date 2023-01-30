@@ -1,5 +1,5 @@
 ---
 title: Dovolená
-date: 2023-01-30T14:58:05.197Z
+date: 2023-01-29T14:58:05.197Z
 ---
-Od 14.1.2023 do 15.1.2023 dovolená!!!!!
+Dejme tomu, že z nějakého důvodu tu budete chtít napsat opravdu velikánský text. Těžko říct, jak by se to potom mělo řešit.

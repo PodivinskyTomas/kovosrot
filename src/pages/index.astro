@@ -5,7 +5,25 @@ import "../styles/global.css";
 import MapComponent from "../components/MapComponent.vue";
 import AppNews from "../components/AppNews.vue";
 
-const news = await Astro.glob("../pages/news/*.md");
+const numberOfNewsToLoad = 3;
+let news;
+try {
+    news = (await Astro.glob("../pages/news/*.md"))
+        .sort((d1, d2): number => {
+            let date1 = new Date(d1.frontmatter.date).getTime();
+            let date2 = new Date(d2.frontmatter.date).getTime();
+
+            if (date1 < date2) {
+                return 1;
+            } else if (date1 > date2) {
+                return 2;
+            }
+            return 0;
+        })
+        .slice(0, numberOfNewsToLoad);
+} catch (exception) {
+    news = null;
+}
 
 const openingHours = [
     ["Pondělí", "8:00-15:30"],
@@ -20,10 +38,14 @@ const openingHours = [
 
 <Layout title="Welcome to Astro.">
     <main class="content">
-        <section class="content__news">
-            <h2 id="news">Aktuality</h2>
-            <AppNews files={news} />
-        </section>
+        {
+            news != null && (
+                <section class="content__news">
+                    <h2 id="news">Aktuality</h2>
+                    <AppNews files={news} />
+                </section>
+            )
+        }
         <section class="content__opening_hours">
             <h2 id="opening-hours">Kdy nás můžete zastihnout?</h2>
             <InformationTable information={openingHours} />

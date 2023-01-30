@@ -15,7 +15,12 @@ export default {
     name: "NewsCard",
     computed: {
         fileContent(): string {
-            return this.file.rawContent.call(this);
+            const fileContent: string = this.file.rawContent.call(this);
+            const maxTextLength = 48;
+            if (fileContent.length > maxTextLength) {
+                return fileContent.substring(0, maxTextLength) + " [...]";
+            }
+            return fileContent;
         }
     },
     props: {
@@ -47,6 +52,8 @@ export default {
     border-radius: 12px;
     padding: 1.5rem;
     display: flex;
+    box-sizing: border-box;
+    word-wrap: break-word;
 }
 
 .news-card__date-box {
