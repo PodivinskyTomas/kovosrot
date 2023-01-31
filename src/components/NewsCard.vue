@@ -1,5 +1,6 @@
 <template>
-    <a href="#" class="news-card">
+    <a :href="'/article/' + file.file.substring(file.file.lastIndexOf('/') + 1, file.file.length - '.md'.length)"
+        class="news-card">
         <div class="news-card__date-box">
             <h3>{{ day }}</h3>
             <h3>{{ month }}, {{ year }}</h3>
