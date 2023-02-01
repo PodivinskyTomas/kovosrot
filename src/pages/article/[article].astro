@@ -2,7 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import "../../styles/global.css";
 
-export const articles = await Astro.glob("/public/articles/*.md");
+export const articles = await Astro.glob("/public/cms/articles/*.md");
 
 export function getStaticPaths() {
     return articles.map((markdownFile) => {
@@ -29,8 +29,14 @@ const currentArticle = articles.find((article) => {
 <Layout title="Welcome to Astro.">
     <section>
         <h2>{currentArticle?.frontmatter.title}</h2>
+        <hr />
         <p>{currentArticle?.rawContent.call(this)}</p>
     </section>
 </Layout>
 
-<style is:global></style>
+<style>
+    section {
+        text-align: left;
+        height: 80vh;
+    }
+</style>

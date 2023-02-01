@@ -8,7 +8,7 @@ import AppNews from "../components/AppNews.vue";
 const numberOfNewsToLoad = 3;
 let news;
 try {
-    news = (await Astro.glob("/public/articles/*.md"))
+    news = (await Astro.glob("/public/cms/articles/*.md"))
         .sort((d1, d2): number => {
             let date1 = new Date(d1.frontmatter.date).getTime();
             let date2 = new Date(d2.frontmatter.date).getTime();
@@ -36,7 +36,7 @@ const openingHours = [
 ];
 ---
 
-<Layout title="Vladimír Podivínský - VKO Litovel">
+<Layout title="Vladimír Podivínský - VKO Litovel" includeHeader={true}>
     {
         news != null && news.length > 0 && (
             <section class="content__news">

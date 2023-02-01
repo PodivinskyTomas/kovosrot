@@ -7,12 +7,23 @@ media_folder: "src/assets"
 public_folder: "/assets"
 
 collections:
-  - name: "news" # Used in routes, e.g., /admin/collections/blog
-    label: "Aktuality" # Used in the UI
-    folder: "src/pages/news" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+  - name: "article"
+    label: "Aktuality"
+    folder: "public/cms/articles"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "Titulek", widget: "string"}
+      - {label: "Publish Date", name: "Datum vytvoření", widget: "date"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "provozni_doba"
+    label: "Provozní doba"
+    folder: "public/cms/"
+    create: true
+    slug: "{{slug}}"
+
+    # TODO
+    fields:
       - {label: "Title", name: "Titulek", widget: "string"}
       - {label: "Publish Date", name: "Datum vytvoření", widget: "date"}
       - {label: "Body", name: "body", widget: "markdown"}

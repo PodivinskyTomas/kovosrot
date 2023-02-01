@@ -1,9 +1,10 @@
 ---
 export interface Props {
     title: string;
+    includeHeader?: boolean;
 }
 
-const { title } = Astro.props;
+const { title, includeHeader = false } = Astro.props;
 import AppHeader from "../components/AppHeader.vue";
 import AppNav from "../components/AppNav.vue";
 import AppFooter from "../components/AppFooter.vue";
@@ -28,7 +29,7 @@ import AppFooter from "../components/AppFooter.vue";
         ></script>
     </head>
     <body>
-        <AppHeader />
+        {includeHeader && <AppHeader />}
         <AppNav client:only />
         <main class="content">
             <slot />

@@ -4,10 +4,10 @@
             <h3>Výkup kovového opadu Litovel</h3>
         </a>
         <div>
-            <a href="#contact" class="app-nav__link">Kontakt</a>
-            <a href="#where-to-find-us" class="app-nav__link">Kde nás najít?</a>
-            <a href="#opening-hours" class="app-nav__link">Provozní doba</a>
-            <a href="#news" class="app-nav__link">Aktuality</a>
+            <a href="/#contact" class="app-nav__link">Kontakt</a>
+            <a href="/#where-to-find-us" class="app-nav__link">Kde nás najít?</a>
+            <a href="/#opening-hours" class="app-nav__link">Provozní doba</a>
+            <a href="/#news" class="app-nav__link">Aktuality</a>
         </div>
     </nav>
 </template>
