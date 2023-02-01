@@ -2,9 +2,16 @@
 import Layout from "../../layouts/Layout.astro";
 import "../../styles/global.css";
 
-export const articles = await Astro.glob("/public/cms/articles/*.md");
+export async function loadArticles() {
+    try {
+        return await Astro.glob("/public/cms/articles/*.md");
+    } catch (e) {
+        return [];
+    }
+}
+export const articles = await loadArticles();
 
-export function getStaticPaths() {
+export async function getStaticPaths() {
     return articles.map((markdownFile) => {
         let fileUrl = markdownFile.file?.substring(
             markdownFile.file.lastIndexOf("/") + 1,

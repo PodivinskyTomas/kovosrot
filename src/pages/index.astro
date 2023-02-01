@@ -12,6 +12,7 @@ async function loadArticles() {
         return [];
     }
 }
+
 const numberOfNewsToLoad = 3;
 const news = (await loadArticles())
     .sort((d1, d2): number => {
