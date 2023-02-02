@@ -54,7 +54,9 @@ const openingHours = [
     </section>
     <section>
         <h2 id="where-to-find-us">Kde nás najít?</h2>
-        <MapComponent client:visible />
+        <div class="mapComponent-section">
+            <MapComponent client:visible />
+        </div>
         <p>Cholinská 1276/1, 784 01 Litovel</p>
     </section>
     <section class="content__contact">
@@ -79,6 +81,9 @@ const openingHours = [
 </Layout>
 
 <style is:global>
+    .mapComponent-section {
+        height: 280px;
+    }
     #news {
         margin-bottom: 0.8rem;
     }

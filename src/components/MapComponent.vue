@@ -10,7 +10,10 @@ export default {
 <style>
 iframe {
     border: none;
-    width: 400px;
-    height: 280px;
+
+    height: 100%;
+    width: 100%;
+    max-width: 400px;
+    max-height: 280px;
 }
 </style>

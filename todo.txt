@@ -5,3 +5,6 @@
 - Menu => na mobilu zobrazit hamburger
 - Responzivita
 - Sehnat nový background image
+
+
+- Zobrazit warning pokud se je v rozmezí jednoho týdne nějaký státní svátek
