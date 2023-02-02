@@ -4,3 +4,4 @@
 - Úprava pracovní doby přes CMS
 - Menu => na mobilu zobrazit hamburger
 - Responzivita
+- Sehnat nový background image

@@ -26,8 +26,8 @@ header {
     background-image: url("/header-photo.jpeg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100% 100%;
     height: 93vh;
+    max-height: 800px;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -47,5 +47,11 @@ h1 {
 
 h2 {
     font-weight: 800;
+}
+
+@media only screen and (min-width: 1200px) {
+    header {
+        background-size: 100% 100%;
+    }
 }
 </style>
