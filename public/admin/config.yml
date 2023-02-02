@@ -11,10 +11,10 @@ collections:
     label: "Aktuality"
     folder: "public/cms/articles"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    slug: "{{year}}-{{month}}-{{day}}-{{title}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - {label: "Title", name: "Titulek", widget: "string"}
-      - {label: "Publish Date", name: "Datum vytvoření", widget: "date"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "creation_date", widget: "date"}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "provozni_doba"
     label: "Provozní doba"
