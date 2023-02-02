@@ -1,0 +1,6 @@
+- S tatou projít přidání mapy na google mapy a pak ji přidat do stránky
+- CMS čeština
+- Loading provozní doby z CMS
+- Úprava pracovní doby přes CMS
+- Menu => na mobilu zobrazit hamburger
+- Responzivita
