@@ -47,8 +47,8 @@ export default defineConfig({
         NetlifyCMS({
             previewStyles: [],
             adminPath: "/admin",
-            locale: "cs",
             config: {
+                locale: "cs",
                 backend: {
                     name: 'git-gateway',
                     branch: 'main',
