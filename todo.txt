@@ -5,9 +5,11 @@ NOW:
 - Sehnat nový background image
 - Vyměnit warning ikonu za file místo importu
 - Pokud jde přidat tooltip do CMS tak přidat
+- Errorové stránky
+- App Ikona
 
 LONG TERM:
 - Zobrazit warning pokud se je v rozmezí jednoho týdne nějaký státní svátek
 
 ???
-- Provozní doba (v CMS by to pravděpodobně bylo tak komplikované, že by to stejně nikdy nikdo neupravil)
+- text na odd sekcích je docela unreadable
