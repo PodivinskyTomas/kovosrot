@@ -31,7 +31,7 @@ export default {
         }
     },
     created() {
-        let date: string = this.file.frontmatter.date;
+        let date: string = this.file.frontmatter.creation_date;
         date = date.substring(0, date.indexOf("T")).replaceAll("-", ".");
         const dateParts = date.split(".");
         this.day = dateParts[2];

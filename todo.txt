@@ -1,10 +1,14 @@
+NOW:
 - S tatou projít přidání mapy na google mapy a pak ji přidat do stránky
-- CMS čeština
-- Loading provozní doby z CMS
-- Úprava pracovní doby přes CMS
 - Menu => na mobilu zobrazit hamburger
 - Responzivita
 - Sehnat nový background image
+- Vyměnit warning ikonu za file místo importu
+- Pokud jde přidat tooltip do CMS tak přidat
 
-
+LONG TERM:
 - Zobrazit warning pokud se je v rozmezí jednoho týdne nějaký státní svátek
+
+???
+- Provozní doba (v CMS by to pravděpodobně bylo tak komplikované, že by to stejně nikdy nikdo neupravil)
+- CMS čeština (pokud to teda jde s momentální astro integrací)
