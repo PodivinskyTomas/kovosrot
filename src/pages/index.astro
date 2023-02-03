@@ -5,6 +5,7 @@ import "../styles/global.css";
 import MapComponent from "../components/MapComponent.vue";
 import AppNews from "../components/AppNews.vue";
 import AppWarning from "../components/AppWarning.vue";
+import { Content } from "../../public/cms/about_us/about_us.md";
 
 async function loadArticles() {
     try {
@@ -29,7 +30,9 @@ const news = (await loadArticles())
     })
     .slice(0, numberOfNewsToLoad);
 
-const openingHoursFile = (await Astro.glob("/public/cms/provozni_doba.md"))[0];
+const openingHoursFile = (
+    await Astro.glob("/public/cms/opening_hours/provozni_doba.md")
+)[0];
 const fileContent = openingHoursFile.rawContent.call(this);
 
 let openingHours: string[][] = [];
@@ -48,6 +51,10 @@ for (const row of rows) {
             </section>
         )
     }
+    <section class="content__about_us">
+        <h2 id="about-us">O nás</h2>
+        <Content class="about_us_text" />
+    </section>
     <section class="content__opening_hours">
         <h2 id="opening-hours">Kdy nás můžete zastihnout?</h2>
         <!-- <AppWarning
@@ -97,5 +104,9 @@ for (const row of rows) {
     }
     #where-to-find-us {
         margin-bottom: 1rem;
+    }
+    .content__about_us p {
+        width: 50%;
+        margin: auto;
     }
 </style>

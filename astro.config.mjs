@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import NetlifyCMS from 'astro-netlify-cms';
+import { CMS_COLLECTION_LOCATIONS } from "./src/constants.ts";
 
 // https://astro.build/config
 import vue from "@astrojs/vue";
@@ -7,7 +8,7 @@ import vue from "@astrojs/vue";
 const articleCollection = {
     name: "article",
     label: "Aktuality",
-    folder: "public/cms/articles",
+    folder: CMS_COLLECTION_LOCATIONS.ARTICLES,
     create: true,
     slug: "{{year}}-{{month}}-{{day}}-{{title}}",
     fields: [
@@ -18,11 +19,27 @@ const articleCollection = {
 }
 
 const openingHoursCollection = {
-    name: "warnings",
+    name: "provozni_doba",
     label: "Provozní doba",
-    folder: "public/cms/",
+    folder: CMS_COLLECTION_LOCATIONS.OPENING_HOURS,
     create: false,
     slug: "Provozní doba",
+    fields: [
+        {
+            label: "Text",
+            name: "body",
+            widget: "markdown",
+            sanitize_preview: true
+        },
+    ]
+}
+
+const aboutUsCollection = {
+    name: "about_us",
+    label: "O nás",
+    folder: CMS_COLLECTION_LOCATIONS.ABOUT_US,
+    create: false,
+    slug: "O nás",
     fields: [
         {
             label: "Text",
@@ -71,7 +88,8 @@ export default defineConfig({
                 },
                 collections: [
                     articleCollection,
-                    openingHoursCollection
+                    openingHoursCollection,
+                    aboutUsCollection
                 ],
             },
         }),
