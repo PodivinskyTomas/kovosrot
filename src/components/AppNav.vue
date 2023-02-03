@@ -48,4 +48,6 @@ nav {
     background-color: var(--p1);
     color: var(--white);
 }
+
+@media screen and (max-width: 1130px) {}
 </style>
