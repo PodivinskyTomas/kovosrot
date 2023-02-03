@@ -90,6 +90,17 @@ for (const row of rows) {
         </div>
     </section>
 </Layout>
+<script>
+    const menuCheckbox = document.getElementById("menu-toggle");
+    if (menuCheckbox !== null) {
+        const navLinks = document.getElementsByClassName("app-nav__link");
+        for (const link of navLinks) {
+            link.addEventListener("click", () => {
+                menuCheckbox.checked = !menuCheckbox.checked;
+            });
+        }
+    }
+</script>
 
 <style is:global>
     .mapComponent-section {

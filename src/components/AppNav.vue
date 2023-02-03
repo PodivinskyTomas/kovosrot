@@ -111,7 +111,7 @@ nav {
 
 @media (max-width: 1300px) {
     nav {
-        padding: 0.28125rem 1rem;
+        padding: 0.28125rem 1rem 0.28125rem var(--content-padding);
     }
 
     .menu-button-container {
