@@ -4,56 +4,57 @@ import { CMS_COLLECTION_LOCATIONS } from "./src/constants.ts";
 
 // https://astro.build/config
 import vue from "@astrojs/vue";
-import robotsTxt from "astro-robots-txt";
 import compress from "astro-compress";
+import sitemap from "@astrojs/sitemap";
+
 const articleCollection = {
-  name: "article",
-  label: "Aktuality",
-  folder: CMS_COLLECTION_LOCATIONS.ARTICLES,
-  create: true,
-  slug: "{{year}}-{{month}}-{{day}}-{{title}}",
-  fields: [{
-    label: "Titulek",
-    name: "title",
-    widget: "string"
-  }, {
-    label: "Datum vytvoření",
-    name: "creation_date",
-    widget: "date"
-  },
-  // TODO make not modifiable
-  {
-    label: "Zpráva",
-    name: "body",
-    widget: "markdown",
-    sanitize_preview: true
-  }]
+    name: "article",
+    label: "Aktuality",
+    folder: CMS_COLLECTION_LOCATIONS.ARTICLES,
+    create: true,
+    slug: "{{year}}-{{month}}-{{day}}-{{title}}",
+    fields: [{
+        label: "Titulek",
+        name: "title",
+        widget: "string"
+    }, {
+        label: "Datum vytvoření",
+        name: "creation_date",
+        widget: "date"
+    },
+    // TODO make not modifiable
+    {
+        label: "Zpráva",
+        name: "body",
+        widget: "markdown",
+        sanitize_preview: true
+    }]
 };
 const openingHoursCollection = {
-  name: "provozni_doba",
-  label: "Provozní doba",
-  folder: CMS_COLLECTION_LOCATIONS.OPENING_HOURS,
-  create: false,
-  slug: "Provozní doba",
-  fields: [{
-    label: "Text",
-    name: "body",
-    widget: "markdown",
-    sanitize_preview: true
-  }]
+    name: "provozni_doba",
+    label: "Provozní doba",
+    folder: CMS_COLLECTION_LOCATIONS.OPENING_HOURS,
+    create: false,
+    slug: "Provozní doba",
+    fields: [{
+        label: "Text",
+        name: "body",
+        widget: "markdown",
+        sanitize_preview: true
+    }]
 };
 const aboutUsCollection = {
-  name: "about_us",
-  label: "O nás",
-  folder: CMS_COLLECTION_LOCATIONS.ABOUT_US,
-  create: false,
-  slug: "O nás",
-  fields: [{
-    label: "Text",
-    name: "body",
-    widget: "markdown",
-    sanitize_preview: true
-  }]
+    name: "about_us",
+    label: "O nás",
+    folder: CMS_COLLECTION_LOCATIONS.ABOUT_US,
+    create: false,
+    slug: "O nás",
+    fields: [{
+        label: "Text",
+        name: "body",
+        widget: "markdown",
+        sanitize_preview: true
+    }]
 };
 
 // const openingHoursDayWarnings = {
@@ -85,18 +86,20 @@ const aboutUsCollection = {
 // https://astro.build/config
 
 // https://astro.build/config
+
+// https://astro.build/config
 export default defineConfig({
-  site: "https://kovosrot-podivinsky.netlify.app/",
-  integrations: [NetlifyCMS({
-    previewStyles: [],
-    adminPath: "/admin",
-    config: {
-      locale: "cs",
-      backend: {
-        name: 'git-gateway',
-        branch: 'main'
-      },
-      collections: [articleCollection, openingHoursCollection, aboutUsCollection]
-    }
-  }), vue(), robotsTxt(), compress()]
+    site: "https://kovosrot-podivinsky.netlify.app/",
+    integrations: [NetlifyCMS({
+        previewStyles: [],
+        adminPath: "/admin",
+        config: {
+            locale: "cs",
+            backend: {
+                name: 'git-gateway',
+                branch: 'main'
+            },
+            collections: [articleCollection, openingHoursCollection, aboutUsCollection]
+        }
+    }), vue(), compress(), sitemap()]
 });

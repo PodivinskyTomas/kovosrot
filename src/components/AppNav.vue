@@ -138,7 +138,7 @@ nav {
     }
 
     #menu-toggle:checked~.menu a {
-        border: 1px solid #333;
+        border: 1px solid var(--n3);
         height: 2.5em;
         line-height: 2.5em;
         padding: 0.5em;
@@ -152,11 +152,15 @@ nav {
         padding: 0.5em 0;
         width: 100%;
         color: white;
-        background-color: #222;
+        background-color: var(--n2);
     }
 
     .menu>a:not(:last-child) {
         border-bottom: 1px solid #444;
+    }
+
+    .nav__title {
+        width: 90%;
     }
 }
 </style>
