@@ -8,6 +8,7 @@ NOW:
 - Errorové stránky
 - App Ikona
 - Zvážit integraci https://github.com/jonasmerlin/astro-seo#readme
+- Datum vytvoření aktuality - formát na dd.mm.yyyy
 
 LONG TERM:
 - Zobrazit warning pokud se je v rozmezí jednoho týdne nějaký státní svátek
