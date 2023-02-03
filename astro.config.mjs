@@ -26,7 +26,7 @@ const openingHoursCollection = {
     fields: [
         {
             label: "Text",
-            name: "show_until",
+            name: "body",
             widget: "markdown"
         },
     ]

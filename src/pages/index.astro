@@ -29,15 +29,14 @@ const news = (await loadArticles())
     })
     .slice(0, numberOfNewsToLoad);
 
-const openingHours = [
-    ["Pondělí", "8:00-15:30"],
-    ["Úterý", "8:00-15:30"],
-    ["Středa", "8:00-15:30"],
-    ["Čtvrtek", "8:00-15:30"],
-    ["Pátek", "8:00-15:30"],
-    ["Sobota", "9:00-12:00"],
-    ["Neděle", "Zavřeno"],
-];
+const openingHoursFile = (await Astro.glob("/public/cms/provozni_doba.md"))[0];
+const fileContent = openingHoursFile.rawContent.call(this);
+
+let openingHours: string[][] = [];
+const rows: string[] = fileContent.split("\n");
+for (const row of rows) {
+    openingHours.push(row.split(" "));
+}
 ---
 
 <Layout title="Vladimír Podivínský - VKO Litovel" includeHeader={true}>
