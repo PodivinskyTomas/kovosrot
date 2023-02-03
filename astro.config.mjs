@@ -17,6 +17,21 @@ const articleCollection = {
     ]
 }
 
+const openingHoursCollection = {
+    name: "warnings",
+    label: "Provozní doba",
+    folder: "public/cms/",
+    create: false,
+    slug: "Provozní doba",
+    fields: [
+        {
+            label: "Text",
+            name: "show_until",
+            widget: "markdown"
+        },
+    ]
+}
+
 // const openingHoursDayWarnings = {
 //     name: "warnings",
 //     label: "Varování - změna otevírací doby",
@@ -55,6 +70,7 @@ export default defineConfig({
                 },
                 collections: [
                     articleCollection,
+                    openingHoursCollection
                 ],
             },
         }),
