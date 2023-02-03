@@ -61,8 +61,8 @@ nav {
 
 .menu-button-container {
     display: none;
-    height: 100%;
-    width: 30px;
+    height: 48px;
+    width: 48px;
     cursor: pointer;
     flex-direction: column;
     justify-content: center;
@@ -109,9 +109,9 @@ nav {
     transform: rotate(-405deg);
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1300px) {
     nav {
-        padding: 1rem;
+        padding: 0.28125rem 1rem;
     }
 
     .menu-button-container {
