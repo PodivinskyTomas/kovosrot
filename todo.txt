@@ -11,4 +11,3 @@ LONG TERM:
 
 ???
 - Provozní doba (v CMS by to pravděpodobně bylo tak komplikované, že by to stejně nikdy nikdo neupravil)
-- CMS čeština (pokud to teda jde s momentální astro integrací)

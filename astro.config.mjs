@@ -13,7 +13,7 @@ const articleCollection = {
     fields: [
         { label: "Titulek", name: "title", widget: "string" },
         { label: "Datum vytvoření", name: "creation_date", widget: "date" }, // TODO make not modifiable
-        { label: "Zpráva", name: "body", widget: "markdown" }
+        { label: "Zpráva", name: "body", widget: "markdown", sanitize_preview: true }
     ]
 }
 
@@ -27,7 +27,8 @@ const openingHoursCollection = {
         {
             label: "Text",
             name: "body",
-            widget: "markdown"
+            widget: "markdown",
+            sanitize_preview: true
         },
     ]
 }

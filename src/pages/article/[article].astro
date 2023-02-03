@@ -21,23 +21,21 @@ export async function getStaticPaths() {
             params: {
                 article: fileUrl,
             },
+            props: {
+                markdownFile,
+            },
         };
     });
 }
 
-const { article } = Astro.params;
-
-const articlePath = article + ".md";
-const currentArticle = articles.find((article) => {
-    return article.file.endsWith(articlePath);
-});
+const { Content, frontmatter } = Astro.props.markdownFile;
 ---
 
 <Layout title="Welcome to Astro.">
     <section>
-        <h2>{currentArticle?.frontmatter.title}</h2>
+        <h2>{frontmatter.title}</h2>
         <hr />
-        <p>{currentArticle?.rawContent.call(this)}</p>
+        <Content />
     </section>
 </Layout>
 
