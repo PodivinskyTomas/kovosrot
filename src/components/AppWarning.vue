@@ -1,6 +1,6 @@
 <template>
     <div class="warning">
-        <i class="fa fa-warning"></i>
+        <i class="fa-solid fa-triangle-exclamation"></i>
         <span>pozor: </span>{{ text }}
     </div>
 </template>

@@ -57,10 +57,10 @@ for (const row of rows) {
     </section>
     <section class="content__opening_hours">
         <h2 id="opening-hours">Kdy nás můžete zastihnout?</h2>
-        <AppWarning
+        <!-- <AppWarning
             class="warning"
             text="Dne 24.4 je státní svátek a bude zavřeno."
-        />
+        /> -->
         <InformationTable information={openingHours} />
     </section>
     <section>
@@ -68,24 +68,32 @@ for (const row of rows) {
         <div class="mapComponent-section">
             <MapComponent client:visible />
         </div>
-        <p>Cholinská 1276/1, 784 01 Litovel</p>
     </section>
     <section class="content__contact">
         <h2 id="contact">Kontakt</h2>
-        <div class="information-table contact-table">
-            <div class="information-table__row">
-                <div>E-mail</div>
+        <div class="content__contact__wrapper">
+            <div>
+                <div class="circled">
+                    <i class="fa-regular fa-envelope"></i>
+                </div>
+                <p><b>E-mail</b></p>
                 <a href="mailto: 1podivinskaludmila@email.cz" class="email"
                     >1podivinskaludmila@email.cz</a
                 >
             </div>
-            <div class="information-table__row">
-                <div>Mobil</div>
+            <div>
+                <div class="circled">
+                    <i class="fa-solid fa-at"></i>
+                </div>
+                <p><b>Mobil</b></p>
                 <a href="tel: +420 603 515 656">+420 603 515 656</a>
             </div>
-            <div class="information-table__row">
-                <div>IČO</div>
-                <div>70011231</div>
+            <div>
+                <div class="circled">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <p><b>Adresa</b></p>
+                <p>Cholinská 1276/1, 784 01 Litovel</p>
             </div>
         </div>
     </section>
@@ -113,6 +121,9 @@ for (const row of rows) {
         margin: 10px auto 10px auto !important;
         width: fit-content;
     }
+    #contact {
+        margin-bottom: 1.5rem;
+    }
     #news {
         margin-bottom: 0.8rem;
     }
@@ -123,15 +134,24 @@ for (const row of rows) {
         width: 50%;
         margin: auto;
     }
-    .information-table__col__wrapper {
-        display: flex;
-        align-items: baseline;
-    }
-    .information-table__col__wrapper i {
-        margin-right: 0.3rem;
-        color: var(--p1);
-    }
     .contact-table {
         max-width: 330px !important;
+    }
+    .content__contact__wrapper {
+        display: flex;
+    }
+    .content__contact__wrapper div {
+        flex: 33%;
+    }
+    .circled {
+        margin: auto;
+        background-color: var(--p1);
+        color: var(--white);
+        --circled-icon-size: 36px;
+        width: var(--circled-icon-size);
+        height: var(--circled-icon-size);
+        line-height: var(--circled-icon-size);
+        border-radius: 100%;
+        margin-bottom: 0.5rem;
     }
 </style>
