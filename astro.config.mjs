@@ -22,7 +22,7 @@ const articleCollection = {
         name: "creation_date",
         widget: "date"
     },
-    // TODO make not modifiable
+    // TODO make not modifiable?
     {
         label: "Zpráva",
         name: "body",
@@ -82,12 +82,6 @@ const aboutUsCollection = {
 // }
 
 // https://astro.build/config
-
-// https://astro.build/config
-
-// https://astro.build/config
-
-// https://astro.build/config
 export default defineConfig({
     site: "https://kovosrot-podivinsky.netlify.app/",
     integrations: [NetlifyCMS({
@@ -97,7 +91,7 @@ export default defineConfig({
             locale: "cs",
             backend: {
                 name: 'git-gateway',
-                branch: 'main'
+                branch: 'master'
             },
             collections: [articleCollection, openingHoursCollection, aboutUsCollection]
         }

@@ -57,10 +57,10 @@ for (const row of rows) {
     </section>
     <section class="content__opening_hours">
         <h2 id="opening-hours">Kdy nás můžete zastihnout?</h2>
-        <!-- <AppWarning
+        <AppWarning
             class="warning"
             text="Dne 24.4 je státní svátek a bude zavřeno."
-        /> -->
+        />
         <InformationTable information={openingHours} />
     </section>
     <section>
@@ -72,10 +72,10 @@ for (const row of rows) {
     </section>
     <section class="content__contact">
         <h2 id="contact">Kontakt</h2>
-        <div class="information-table">
+        <div class="information-table contact-table">
             <div class="information-table__row">
                 <div>E-mail</div>
-                <a href="mailto: 1podivinskaludmila@email.cz"
+                <a href="mailto: 1podivinskaludmila@email.cz" class="email"
                     >1podivinskaludmila@email.cz</a
                 >
             </div>
@@ -90,10 +90,8 @@ for (const row of rows) {
         </div>
     </section>
 </Layout>
-<script>
-    const menuCheckbox = <HTMLInputElement>(
-        document.getElementById("menu-toggle")
-    );
+<script is:inline>
+    const menuCheckbox = document.getElementById("menu-toggle");
     if (menuCheckbox !== null) {
         const navLinks = document.getElementsByClassName("app-nav__link");
         for (const link of navLinks) {
@@ -105,8 +103,11 @@ for (const row of rows) {
 </script>
 
 <style is:global>
+    @import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
+
     .mapComponent-section {
         height: 280px;
+        margin-bottom: 1rem;
     }
     .warning {
         margin: 10px auto 10px auto !important;
@@ -121,5 +122,16 @@ for (const row of rows) {
     .content__about_us p {
         width: 50%;
         margin: auto;
+    }
+    .information-table__col__wrapper {
+        display: flex;
+        align-items: baseline;
+    }
+    .information-table__col__wrapper i {
+        margin-right: 0.3rem;
+        color: var(--p1);
+    }
+    .contact-table {
+        max-width: 330px !important;
     }
 </style>

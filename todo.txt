@@ -1,6 +1,6 @@
 NOW:
 - S tatou projít přidání mapy na google mapy a pak ji přidat do stránky
-- Menu => na mobilu zobrazit hamburger => schování menu po výděru itemu
+- Menu => přerovnání itemů v menu
 - Responzivita
 - Sehnat nový background image
 - Vyměnit warning ikonu za file místo importu

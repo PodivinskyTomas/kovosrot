@@ -16,8 +16,6 @@ export default {
 }
 </script>
 <style scoped>
-@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
-
 .warning {
     color: hsl(36, 100%, 20%);
     border-radius: 10px;
