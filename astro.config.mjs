@@ -10,6 +10,7 @@ import sitemap from "@astrojs/sitemap";
 const articleCollection = {
     name: "article",
     label: "Aktuality",
+    label_singular: "Aktualita",
     folder: CMS_COLLECTION_LOCATIONS.ARTICLES,
     create: true,
     slug: "{{year}}-{{month}}-{{day}}-{{title}}",
@@ -86,7 +87,7 @@ export default defineConfig({
     site: "https://kovosrot-podivinsky.netlify.app/",
     integrations: [NetlifyCMS({
         previewStyles: [],
-        adminPath: "/admin",
+        adminPath: "/administrace",
         config: {
             locale: "cs",
             backend: {
