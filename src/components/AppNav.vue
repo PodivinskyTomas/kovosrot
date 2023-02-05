@@ -8,11 +8,10 @@
             <div class='menu-button'></div>
         </label>
         <div class="menu">
-            <a href="/#contact" class="app-nav__link">Kontakt</a>
-            <a href="/#where-to-find-us" class="app-nav__link">Kde nás najít?</a>
-            <a href="/#opening-hours" class="app-nav__link">Provozní doba</a>
-            <a href="/#about-us" class="app-nav__link">O nás</a>
-            <a href="/#news" class="app-nav__link">Aktuality</a>
+            <a href="/#kontakt" class="app-nav__link">Kontakt</a>
+            <a href="/#otevíracíDoba" class="app-nav__link">Provozní doba</a>
+            <a href="/#oNás" class="app-nav__link">O nás</a>
+            <a href="/#aktuality" class="app-nav__link">Aktuality</a>
         </div>
     </nav>
 </template>

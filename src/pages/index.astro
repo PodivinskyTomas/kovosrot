@@ -46,17 +46,17 @@ for (const row of rows) {
     {
         news != null && news.length > 0 && (
             <section class="content__news">
-                <h2 id="news">Aktuality</h2>
+                <h2 id="aktuality">Aktuality</h2>
                 <AppNews files={news} />
             </section>
         )
     }
     <section class="content__about_us">
-        <h2 id="about-us">O nás</h2>
+        <h2 id="oNás">O nás</h2>
         <Content class="about_us_text" />
     </section>
     <section class="content__opening_hours">
-        <h2 id="opening-hours">Kdy nás můžete zastihnout?</h2>
+        <h2 id="otevíracíDoba">Kdy nás můžete zastihnout?</h2>
         <!-- <AppWarning
             class="warning"
             text="Dne 24.4 je státní svátek a bude zavřeno."
@@ -64,7 +64,7 @@ for (const row of rows) {
         <InformationTable information={openingHours} />
     </section>
     <section class="content__contact">
-        <h2 id="contact">Kontakt</h2>
+        <h2 id="kontakt">Kontakt</h2>
         <div class="content__contact__wrapper">
             <div>
                 <div class="circled">
