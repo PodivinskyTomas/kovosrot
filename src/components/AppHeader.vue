@@ -25,13 +25,18 @@ export default {
 header {
     background-image: url("/header-photo.jpeg");
     background-repeat: no-repeat;
-    background-position: center;
+    background-size: cover;
+    background-position: 30% 50%;
     height: 93vh;
-    max-height: 800px;
     display: flex;
     justify-content: center;
     align-content: center;
     flex-direction: column;
+}
+
+header div h1,
+header div h2 {
+    text-shadow: 0px 0px 10px black;
 }
 
 .header-wrapper__text-wrapper {
@@ -49,9 +54,9 @@ h2 {
     font-weight: 800;
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (max-width: 900px) {
     header {
-        background-size: 100% 100%;
+        background-position: center;
     }
 }
 </style>

@@ -36,6 +36,7 @@ const openingHoursCollection = {
     label: "Provozní doba",
     folder: CMS_COLLECTION_LOCATIONS.OPENING_HOURS,
     create: false,
+    delete: false,
     slug: "Provozní doba",
     fields: [{
         label: "Text",
@@ -49,6 +50,8 @@ const aboutUsCollection = {
     label: "O nás",
     folder: CMS_COLLECTION_LOCATIONS.ABOUT_US,
     create: false,
+    delete: false,
+    slug: "Provozní doba",
     slug: "O nás",
     fields: [{
         label: "Text",
