@@ -4,8 +4,6 @@ NOW:
 - Errorové stránky
 - App Ikona
 - Zvážit integraci https://github.com/jonasmerlin/astro-seo#readme
-- Datum vytvoření aktuality - formát na dd.mm.yyyy
-- Navigace do češtiny
 - Ostranit kde nás najít nav
 
 LONG TERM:

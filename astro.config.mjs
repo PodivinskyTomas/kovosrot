@@ -18,12 +18,15 @@ const articleCollection = {
         label: "Titulek",
         name: "title",
         widget: "string"
-    }, {
-        label: "Datum vytvoření",
-        name: "creation_date",
-        widget: "date"
     },
     // TODO make not modifiable?
+    {
+        label: "Datum vytvoření",
+        name: "creation_date",
+        date_format: "DD.MM.YYYY",
+        time_format: false,
+        widget: "datetime"
+    },
     {
         label: "Zpráva",
         name: "body",
