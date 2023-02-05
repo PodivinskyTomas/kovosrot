@@ -1,17 +1,17 @@
 NOW:
 - S tatou projít přidání mapy na google mapy a pak ji přidat do stránky
-- Menu => přerovnání itemů v menu
-- Responzivita
-- Sehnat nový background image
-- Vyměnit warning ikonu za file místo importu
-- Pokud jde přidat tooltip do CMS tak přidat
+- Responzivita - O nás text
 - Errorové stránky
 - App Ikona
 - Zvážit integraci https://github.com/jonasmerlin/astro-seo#readme
 - Datum vytvoření aktuality - formát na dd.mm.yyyy
+- Navigace do češtiny
+- Ostranit kde nás najít nav
 
 LONG TERM:
 - Zobrazit warning pokud se je v rozmezí jednoho týdne nějaký státní svátek
 
 ???
-- text na odd sekcích je docela unreadable
+- Text na odd sekcích je docela unreadable
+- Vyměnit warning ikonu za file místo importu
+- Pokud jde přidat tooltip do CMS tak přidat
