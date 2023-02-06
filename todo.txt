@@ -1,5 +1,4 @@
 NOW:
-- S tatou projít přidání mapy na google mapy a pak ji přidat do stránky
 - Responzivita - O nás text
 - Errorové stránky
 - App Ikona
