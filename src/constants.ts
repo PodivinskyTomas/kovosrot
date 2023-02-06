@@ -1,5 +1,6 @@
 export enum CMS_COLLECTION_LOCATIONS {
     ARTICLES = "public/cms/articles",
-    OPENING_HOURS = "public/cms/opening_hours",
-    ABOUT_US = "public/cms/about_us"
+    PAGE_TEXTS = "public/cms/page_texts",
+    OPENING_HOURS = "public/cms/opening_hours/provozni_doba.md",
+    ABOUT_US = "public/cms/about_us/about_us.md"
 }

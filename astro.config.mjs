@@ -19,7 +19,6 @@ const articleCollection = {
         name: "title",
         widget: "string"
     },
-    // TODO make not modifiable?
     {
         label: "Datum vytvoření",
         name: "creation_date",
@@ -37,9 +36,9 @@ const articleCollection = {
 const openingHoursCollection = {
     name: "provozni_doba",
     label: "Provozní doba",
-    folder: CMS_COLLECTION_LOCATIONS.OPENING_HOURS,
     create: false,
     delete: false,
+    file: CMS_COLLECTION_LOCATIONS.PAGE_TEXTS + "/provozni_doba.md",
     slug: "Provozní doba",
     fields: [{
         label: "Text",
@@ -51,9 +50,9 @@ const openingHoursCollection = {
 const aboutUsCollection = {
     name: "about_us",
     label: "O nás",
-    folder: CMS_COLLECTION_LOCATIONS.ABOUT_US,
     create: false,
     delete: false,
+    file: CMS_COLLECTION_LOCATIONS.PAGE_TEXTS + "/about_us.md",
     slug: "Provozní doba",
     slug: "O nás",
     fields: [{
@@ -64,6 +63,14 @@ const aboutUsCollection = {
     }]
 };
 
+const pageTexts = {
+    name: "page_texts",
+    label: "Texty na stránce",
+    files: [
+        openingHoursCollection,
+        aboutUsCollection
+    ]
+}
 // const openingHoursDayWarnings = {
 //     name: "warnings",
 //     label: "Varování - změna otevírací doby",
@@ -96,11 +103,12 @@ export default defineConfig({
         adminPath: "/administrace",
         config: {
             locale: "cs",
+            search: false,
             backend: {
                 name: 'git-gateway',
                 branch: 'master'
             },
-            collections: [articleCollection, openingHoursCollection, aboutUsCollection]
+            collections: [articleCollection, pageTexts]
         }
     }), vue(), compress(), sitemap()]
 });

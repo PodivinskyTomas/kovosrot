@@ -5,7 +5,7 @@ import "../styles/global.css";
 import MapComponent from "../components/MapComponent.vue";
 import AppNews from "../components/AppNews.vue";
 import AppWarning from "../components/AppWarning.vue";
-import { Content } from "../../public/cms/about_us/about_us.md";
+import { Content } from "../../public/cms/page_texts/about_us.md";
 
 async function loadArticles() {
     try {
@@ -31,7 +31,7 @@ const news = (await loadArticles())
     .slice(0, numberOfNewsToLoad);
 
 const openingHoursFile = (
-    await Astro.glob("/public/cms/opening_hours/provozni_doba.md")
+    await Astro.glob("/public/cms/page_texts/provozni_doba.md")
 )[0];
 const fileContent = openingHoursFile.rawContent.call(this);
 
@@ -63,8 +63,8 @@ for (const row of rows) {
         /> -->
         <InformationTable information={openingHours} />
     </section>
-    <!-- <section>
-        <h2>Co vykupujeme?</h2>
+    <section class="content__about_us">
+        <h2 class="about_us_text">Co vykupujeme?</h2>
         <table>
             <tbody>
                 <tr><td>Piliny a třísky železných kovů</td></tr>
@@ -72,12 +72,6 @@ for (const row of rows) {
                 <tr><td>Kovové obaly</td></tr>
                 <tr><td>Železné kovy</td></tr>
                 <tr><td>Neželezné kovy</td></tr>
-                <tr
-                    ><td
-                        >Vyřazená zařízení neuvedená pod čísly 16 02 09 až 16 02
-                        13</td
-                    ></tr
-                >
                 <tr><td>Měď, bronz, mosaz</td></tr>
                 <tr><td>Hliník</td></tr>
                 <tr><td>Olovo</td></tr>
@@ -86,11 +80,11 @@ for (const row of rows) {
                 <tr><td>Cín</td></tr>
                 <tr><td>Směsné kovy</td></tr>
                 <tr><td>Kabely neuvedené pod číslem 17 04 10</td></tr>
-                <tr><td>Papír a lepenka</td></tr>
+                <tr><td>Papír</td></tr>
                 <tr><td>Kovy</td></tr>
             </tbody>
         </table>
-    </section> -->
+    </section>
     <section class="content__contact">
         <h2 id="kontakt">Kontakt</h2>
         <div class="content__contact__wrapper">
@@ -191,7 +185,7 @@ for (const row of rows) {
     }
 
     table td {
-        padding: 0.2rem;
+        padding: 0.25rem 3rem;
     }
 
     tbody tr:nth-child(odd) {
