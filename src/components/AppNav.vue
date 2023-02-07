@@ -9,6 +9,7 @@
         </label>
         <div class="menu">
             <a href="/#kontakt" class="app-nav__link">Kontakt</a>
+            <a href="/#coVykupujeme" class="app-nav__link">Co vykupujeme</a>
             <a href="/#otevíracíDoba" class="app-nav__link">Provozní doba</a>
             <a href="/#oNás" class="app-nav__link">O nás</a>
             <a href="/#aktuality" class="app-nav__link">Aktuality</a>
@@ -108,7 +109,7 @@ nav {
     transform: rotate(-405deg);
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1320px) {
     nav {
         padding: 0.28125rem 1rem 0.28125rem var(--content-padding);
     }
