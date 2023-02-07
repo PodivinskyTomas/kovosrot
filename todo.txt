@@ -3,7 +3,7 @@ NOW:
 - Errorové stránky
 - App Ikona
 - Zvážit integraci https://github.com/jonasmerlin/astro-seo#readme
-- Co vykupujeme? https://isoh.mzp.cz/RegistrZarizeni/Main/PovoleneOdpady?id=8547 kromě jakýhosi elektra a lepenky
+- Co vykupujeme do CMS
 
 LONG TERM:
 - Zobrazit warning pokud se je v rozmezí jednoho týdne nějaký státní svátek

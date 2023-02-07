@@ -1,0 +1,91 @@
+---
+import AppHeader from "../components/AppHeader.vue";
+import AppNav from "../components/AppNav.vue";
+import AppFooter from "../components/AppFooter.vue";
+import "../styles/global.css";
+const { frontmatter } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <meta
+            name="description"
+            content="Výkup kovového odpadu Litovel Vladimír Podivínský"
+        />
+        <meta name="author" content="Tomáš Podivínský" />
+        <title>{frontmatter.title}</title>
+    </head>
+    <body>
+        <AppNav />
+        <main class="content">
+            <section>
+                <h2>{frontmatter.title}</h2>
+                <hr />
+                <slot />
+            </section>
+        </main>
+        <AppFooter />
+    </body>
+</html>
+<style>
+    :root {
+        --content-padding: 6rem;
+        --section-vertical-padding: 3rem;
+    }
+
+    .content {
+        text-align: center;
+        margin: auto;
+    }
+    .content section {
+        padding-left: var(--content-padding);
+        padding-right: var(--content-padding);
+        background-color: var(--n5);
+        padding-top: var(--section-vertical-padding);
+        padding-bottom: var(--section-vertical-padding);
+    }
+    .content section h2 {
+        scroll-margin-top: 4em;
+        margin-bottom: 1rem;
+    }
+    .content > section:nth-of-type(odd) {
+        background-color: var(--n6);
+    }
+    @media only screen and (max-width: 1000px) {
+        :root {
+            --content-padding: 5rem;
+        }
+    }
+    @media only screen and (max-width: 920px) {
+        :root {
+            --content-padding: 4rem;
+        }
+    }
+    @media only screen and (max-width: 870px) {
+        :root {
+            --content-padding: 2rem;
+        }
+    }
+    @media only screen and (max-width: 400px) {
+        :root {
+            --content-padding: 1rem;
+        }
+    }
+    html {
+        font-family: system-ui, sans-serif;
+        background-color: #f6f6f6;
+    }
+    code {
+        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+    }
+    section {
+        text-align: left;
+        height: 80vh;
+    }
+</style>

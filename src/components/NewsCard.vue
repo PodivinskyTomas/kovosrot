@@ -1,5 +1,5 @@
 <template>
-    <a :href="'/article/' + file.file.substring(file.file.lastIndexOf('/') + 1, file.file.length - '.md'.length)"
+    <a :href="'/aktualita/' + file.file.substring(file.file.lastIndexOf('/') + 1, file.file.length - '.md'.length)"
         class="news-card">
         <div class="news-card__date-box">
             <h3>{{ day }}</h3>

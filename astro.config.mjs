@@ -31,7 +31,14 @@ const articleCollection = {
         name: "body",
         widget: "markdown",
         sanitize_preview: true
-    }]
+    },
+    {
+        label: "Layout",
+        name: "layout",
+        widget: "hidden",
+        default: "../../layouts/Article.astro",
+    }
+    ]
 };
 const openingHoursCollection = {
     name: "provozni_doba",

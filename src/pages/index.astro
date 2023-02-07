@@ -9,7 +9,7 @@ import { Content } from "../content/page_texts/about_us.md";
 
 async function loadArticles() {
     try {
-        return await Astro.glob("/public/cms/articles/*.md");
+        return await Astro.glob("../pages/aktualita/*.md");
     } catch (e) {
         return [];
     }
@@ -42,7 +42,7 @@ for (const row of rows) {
 }
 ---
 
-<Layout title="Vladimír Podivínský - VKO Litovel" includeHeader={true}>
+<Layout title="Výkup kovového odpadu Vladimír Podivínský" includeHeader={true}>
     {
         news != null && news.length > 0 && (
             <section class="content__news">
@@ -190,6 +190,10 @@ for (const row of rows) {
 
     tbody tr:nth-child(odd) {
         background-color: var(--n6);
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: var(--n5);
     }
 
     @media only screen and (max-width: 800px) {
