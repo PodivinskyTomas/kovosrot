@@ -5,7 +5,7 @@ import "../styles/global.css";
 import MapComponent from "../components/MapComponent.vue";
 import AppNews from "../components/AppNews.vue";
 import AppWarning from "../components/AppWarning.vue";
-import { Content } from "../../public/cms/page_texts/about_us.md";
+import { Content } from "../content/page_texts/about_us.md";
 
 async function loadArticles() {
     try {
@@ -31,7 +31,7 @@ const news = (await loadArticles())
     .slice(0, numberOfNewsToLoad);
 
 const openingHoursFile = (
-    await Astro.glob("/public/cms/page_texts/provozni_doba.md")
+    await Astro.glob("../content/page_texts/provozni_doba.md")
 )[0];
 const fileContent = openingHoursFile.rawContent.call(this);
 
