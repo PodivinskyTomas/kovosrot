@@ -23,11 +23,11 @@ const { frontmatter } = Astro.props;
     <body>
         <AppNav />
         <main class="content">
-            <section>
+            <article>
                 <h2>{frontmatter.title}</h2>
                 <hr />
                 <slot />
-            </section>
+            </article>
         </main>
         <AppFooter />
     </body>
@@ -42,18 +42,18 @@ const { frontmatter } = Astro.props;
         text-align: center;
         margin: auto;
     }
-    .content section {
+    .content article {
         padding-left: var(--content-padding);
         padding-right: var(--content-padding);
         background-color: var(--n5);
         padding-top: var(--section-vertical-padding);
         padding-bottom: var(--section-vertical-padding);
     }
-    .content section h2 {
+    .content article h2 {
         scroll-margin-top: 4em;
         margin-bottom: 1rem;
     }
-    .content > section:nth-of-type(odd) {
+    .content > article:nth-of-type(odd) {
         background-color: var(--n6);
     }
     @media only screen and (max-width: 1000px) {
@@ -84,7 +84,7 @@ const { frontmatter } = Astro.props;
         font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
     }
-    section {
+    article {
         text-align: left;
         height: 80vh;
     }

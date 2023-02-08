@@ -1,27 +1,38 @@
 ---
+import AppHeader from "../components/AppHeader.vue";
+import AppNav from "../components/AppNav.vue";
+import AppFooter from "../components/AppFooter.vue";
+
 export interface Props {
     title: string;
     includeHeader?: boolean;
 }
 
 const { title, includeHeader = false } = Astro.props;
-import AppHeader from "../components/AppHeader.vue";
-import AppNav from "../components/AppNav.vue";
-import AppFooter from "../components/AppFooter.vue";
+
+const metaDescription =
+    "Webové stránky s informacemi a novinkami o kovošrotu Litovel - Podivínský";
 ---
 
 <!DOCTYPE html>
 <html lang="cs">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
+        <meta charset="UTF-8" />
+
+        <meta name="viewport" content="width=device-width" />
         <meta
-            name="description"
-            content="Výkup kovového odpadu Litovel Vladimír Podivínský"
+            name="keywords"
+            content="kovošrot, výkup kovových odpadů, sběrna"
         />
+        <meta name="description" content={metaDescription} />
         <meta name="author" content="Tomáš Podivínský" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/header-photo.jpeg" />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:title" content={title} />
+
         <title>{title}</title>
     </head>
     <body>

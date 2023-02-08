@@ -4,6 +4,9 @@ NOW:
 - App Ikona
 - Zvážit integraci https://github.com/jonasmerlin/astro-seo#readme
 - Co vykupujeme do CMS
+- CMS titulek Kovošrot Litovel prefix
+- SCHEMA MARKUP FOR SEO https://www.youtube.com/watch?v=7JwJvaE9M2Y&ab_channel=Skillthrive 2:40 cca
+- Inspect summary a figure html tagy
 
 LONG TERM:
 - Zobrazit warning pokud se je v rozmezí jednoho týdne nějaký státní svátek
