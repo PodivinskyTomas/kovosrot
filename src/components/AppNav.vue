@@ -160,7 +160,7 @@ nav {
     }
 
     .nav__title {
-        width: 90%;
+        width: fit-content;
     }
 }
 </style>

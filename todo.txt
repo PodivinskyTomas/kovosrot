@@ -5,6 +5,10 @@ NOW:
 - Zvážit integraci https://github.com/jonasmerlin/astro-seo#readme
 - SCHEMA MARKUP FOR SEO https://www.youtube.com/watch?v=7JwJvaE9M2Y&ab_channel=Skillthrive 2:40 cca
 - Inspect summary a figure html tagy
+- Lepší animace
+- Zpěknit kontakt?
+- NewsCard flex
+- Obrátit order navu
 
 LONG TERM:
 - Zobrazit warning pokud se je v rozmezí jednoho týdne nějaký státní svátek
@@ -14,3 +18,7 @@ LONG TERM:
 - Vyměnit warning ikonu za file místo importu
 - Pokud jde přidat tooltip do CMS tak přidat
 - Kovošrot Litovel prefix do článků (pokud to je možné :( )
+
+Lighthouse
+- Líné načítání pomocí fasád
+- Mapa - statické podklady bla bla bla
