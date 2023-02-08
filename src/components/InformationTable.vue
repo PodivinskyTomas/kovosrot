@@ -23,7 +23,11 @@ export default {
     display: flex;
     flex-direction: column;
     margin: auto;
-    max-width: 260px;
+    max-width: 250px;
+    border-left: 0.25rem solid var(--p1);
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.5rem;
 }
 
 .information-table__row {
@@ -31,5 +35,9 @@ export default {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 0.3rem;
+}
+
+.information-table__row :first-child {
+    font-weight: bold;
 }
 </style>

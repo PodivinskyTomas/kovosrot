@@ -4,7 +4,6 @@ NOW:
 - App Ikona
 - Zvážit integraci https://github.com/jonasmerlin/astro-seo#readme
 - SCHEMA MARKUP FOR SEO https://www.youtube.com/watch?v=7JwJvaE9M2Y&ab_channel=Skillthrive 2:40 cca
-- Inspect summary a figure html tagy
 - Lepší animace
 - Zpěknit kontakt?
 - NewsCard flex
@@ -15,9 +14,9 @@ LONG TERM:
 
 ???
 - Text na odd sekcích je docela unreadable
-- Vyměnit warning ikonu za file místo importu
-- Pokud jde přidat tooltip do CMS tak přidat
+- Přidat tooltip do CMS tak přidat
 - Kovošrot Litovel prefix do článků (pokud to je možné :( )
+- nav css only
 
 Lighthouse
 - Líné načítání pomocí fasád
