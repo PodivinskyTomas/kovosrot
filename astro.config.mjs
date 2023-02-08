@@ -40,12 +40,18 @@ const articleCollection = {
     }
     ]
 };
+
+function pageTextsItem(filename) {
+    return {
+        create: false,
+        delete: false,
+        file: CMS_COLLECTION_LOCATIONS.PAGE_TEXTS + "/" + filename,
+    }
+}
 const openingHoursCollection = {
+    ...pageTextsItem("provozni_doba.md"),
     name: "provozni_doba",
     label: "Provozní doba",
-    create: false,
-    delete: false,
-    file: CMS_COLLECTION_LOCATIONS.PAGE_TEXTS + "/provozni_doba.md",
     slug: "Provozní doba",
     fields: [{
         label: "Text",
@@ -55,12 +61,9 @@ const openingHoursCollection = {
     }]
 };
 const aboutUsCollection = {
+    ...pageTextsItem("about_us.md"),
     name: "about_us",
     label: "O nás",
-    create: false,
-    delete: false,
-    file: CMS_COLLECTION_LOCATIONS.PAGE_TEXTS + "/about_us.md",
-    slug: "Provozní doba",
     slug: "O nás",
     fields: [{
         label: "Text",
@@ -69,13 +72,25 @@ const aboutUsCollection = {
         sanitize_preview: true
     }]
 };
+const whatWeBuy = {
+    ...pageTextsItem("what_we_buy.md"),
+    name: "what_we_buy",
+    label: "Co vykupujeme?",
+    slug: "Co vykupujeme?",
+    fields: [{
+        label: "Seznam vykupovaného zboží",
+        name: "list",
+        widget: "list",
+    }]
+};
 
 const pageTexts = {
     name: "page_texts",
     label: "Texty na stránce",
     files: [
         openingHoursCollection,
-        aboutUsCollection
+        aboutUsCollection,
+        whatWeBuy
     ]
 }
 // const openingHoursDayWarnings = {

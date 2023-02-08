@@ -5,7 +5,9 @@ import "../styles/global.css";
 import MapComponent from "../components/MapComponent.vue";
 import AppNews from "../components/AppNews.vue";
 import AppWarning from "../components/AppWarning.vue";
+import WhatWeBuyTable from "../components/WhatWeBuyTable.vue";
 import { Content } from "../content/page_texts/about_us.md";
+import { frontmatter } from "../content/page_texts/what_we_buy.md";
 
 async function loadArticles() {
     try {
@@ -36,10 +38,12 @@ const openingHoursFile = (
 const fileContent = openingHoursFile.rawContent.call(this);
 
 let openingHours: string[][] = [];
-const rows: string[] = fileContent.split("\n");
-for (const row of rows) {
+const openingHoursRows: string[] = fileContent.split("\n");
+for (const row of openingHoursRows) {
     openingHours.push(row.split(" "));
 }
+
+let rows: string[] = frontmatter.list;
 ---
 
 <Layout title="Výkup kovového odpadu Vladimír Podivínský" includeHeader={true}>
@@ -65,25 +69,7 @@ for (const row of rows) {
     </section>
     <section class="content__about_us">
         <h2 id="coVykupujeme" class="about_us_text">Co vykupujeme?</h2>
-        <table>
-            <tbody>
-                <tr><td>Piliny a třísky železných kovů</td></tr>
-                <tr><td>Piliny a třísky neželezných kovů</td></tr>
-                <tr><td>Kovové obaly</td></tr>
-                <tr><td>Železné kovy</td></tr>
-                <tr><td>Neželezné kovy</td></tr>
-                <tr><td>Měď, bronz, mosaz</td></tr>
-                <tr><td>Hliník</td></tr>
-                <tr><td>Olovo</td></tr>
-                <tr><td>Zinek</td></tr>
-                <tr><td>Železo a ocel</td></tr>
-                <tr><td>Cín</td></tr>
-                <tr><td>Směsné kovy</td></tr>
-                <tr><td>Kabely neuvedené pod číslem 17 04 10</td></tr>
-                <tr><td>Papír</td></tr>
-                <tr><td>Kovy</td></tr>
-            </tbody>
-        </table>
+        <WhatWeBuyTable rows={rows} />
     </section>
     <section class="content__contact">
         <h2 id="kontakt">Kontakt</h2>
@@ -175,25 +161,6 @@ for (const row of rows) {
         line-height: var(--circled-icon-size);
         border-radius: 100%;
         margin-bottom: 0.5rem;
-    }
-
-    table {
-        border: 1px solid var(--n4);
-        border-collapse: collapse;
-        margin: auto;
-        padding: 0rem;
-    }
-
-    table td {
-        padding: 0.25rem 3rem;
-    }
-
-    tbody tr:nth-child(odd) {
-        background-color: var(--n6);
-    }
-
-    tbody tr:nth-child(even) {
-        background-color: var(--n5);
     }
 
     @media only screen and (max-width: 800px) {

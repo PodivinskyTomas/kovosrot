@@ -1,0 +1,21 @@
+---
+title: Provozní doba
+list:
+  - Piliny a třísky železných kovů
+  - Piliny a třísky neželezných kovů
+  - Kovové obaly
+  - Železné kovy
+  - Neželezné kovy
+  - Měď
+  - bronz
+  - mosaz
+  - Hliník
+  - Olovo
+  - Zinek
+  - Železo a ocel
+  - Cín
+  - Směsné kovy
+  - Kabely neuvedené pod číslem 17 04 10
+  - Papír
+  - Kovy
+---
