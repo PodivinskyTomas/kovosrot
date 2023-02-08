@@ -119,7 +119,7 @@ const pageTexts = {
 
 // https://astro.build/config
 export default defineConfig({
-    site: "https://kovosrot-podivinsky.netlify.app/",
+    site: "https://www.sbernalitovel.cz/",
     integrations: [NetlifyCMS({
         previewStyles: [],
         adminPath: "/administrace",
