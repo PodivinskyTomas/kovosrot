@@ -1,5 +1,5 @@
 ---
-title: Kovošrot Litovel - Nové webové stránky
+title: Nové webové stránky
 creation_date: 2023-02-07T15:28:22.535Z
 layout: ../../layouts/Article.astro
 ---

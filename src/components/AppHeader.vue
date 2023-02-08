@@ -23,7 +23,7 @@ export default {
 }
 
 header {
-    background-image: url("/header-photo.jpeg");
+    background-image: url("/header-photo.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 30% 50%;
