@@ -7,7 +7,6 @@ NOW:
 - Lepší animace
 - Zpěknit kontakt?
 - NewsCard flex
-- Obrátit order navu
 
 LONG TERM:
 - Zobrazit warning pokud se je v rozmezí jednoho týdne nějaký státní svátek
