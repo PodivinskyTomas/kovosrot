@@ -1,5 +1,4 @@
 NOW:
-- Responzivita - O nás text
 - Errorové stránky
 - App Ikona
 - Zvážit integraci https://github.com/jonasmerlin/astro-seo#readme
@@ -14,7 +13,6 @@ LONG TERM:
 ???
 - Text na odd sekcích je docela unreadable
 - Přidat tooltip do CMS tak přidat
-- Kovošrot Litovel prefix do článků (pokud to je možné :( )
 - nav css only
 
 Lighthouse
