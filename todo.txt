@@ -5,7 +5,8 @@ NOW:
 - SCHEMA MARKUP FOR SEO https://www.youtube.com/watch?v=7JwJvaE9M2Y&ab_channel=Skillthrive 2:40 cca
 - Lepší animace
 - Zpěknit kontakt?
-- NewsCard flex
+- NewsCard responsivity
+- Image s textem Výkup kovového odpadu Litovel do meta tagu
 
 LONG TERM:
 - Zobrazit warning pokud se je v rozmezí jednoho týdne nějaký státní svátek
@@ -14,6 +15,7 @@ LONG TERM:
 - Text na odd sekcích je docela unreadable
 - Přidat tooltip do CMS tak přidat
 - nav css only
+- https://www.bing.com/webmasters/about
 
 Lighthouse
 - Líné načítání pomocí fasád
