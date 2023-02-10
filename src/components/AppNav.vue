@@ -47,6 +47,7 @@ nav {
     text-decoration: none;
     font-weight: bold;
     padding: 1rem;
+    height: calc(48px + 0.28125rem * 2 - 2rem);
     transition: 0.4s ease;
 }
 

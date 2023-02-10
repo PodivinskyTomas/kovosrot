@@ -15,10 +15,17 @@ import "../styles/global.css";
     h1 {
         font-size: 3rem;
     }
+    :root {
+        --nav-height: calc(calc(0.28125rem * 2 + 48px) * 2);
+        --footer-height: calc(2rem + 3em);
+        --min-height: calc(
+            100vh - var(--nav-height) - var(--footer-height) - 1rem
+        );
+    }
     section {
         text-align: center;
-        height: 80vh;
         display: flex;
+        min-height: var(--min-height);
         justify-content: center;
         align-items: center;
         flex-direction: column;

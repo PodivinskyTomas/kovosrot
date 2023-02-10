@@ -36,6 +36,11 @@ const { frontmatter } = Astro.props;
     :root {
         --content-padding: 6rem;
         --section-vertical-padding: 3rem;
+        --nav-height: calc(calc(0.28125rem * 2 + 48px) * 2);
+        --footer-height: calc(2rem + 3em);
+        --min-height: calc(
+            100vh - var(--nav-height) - var(--footer-height) - 1rem
+        );
     }
 
     .content {
@@ -86,6 +91,6 @@ const { frontmatter } = Astro.props;
     }
     article {
         text-align: left;
-        height: 80vh;
+        min-height: var(--min-height);
     }
 </style>
