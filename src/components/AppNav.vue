@@ -139,10 +139,11 @@ nav {
     }
 
     #menu-toggle:checked~.menu a {
-        border: 1px solid var(--n2);
+        border-bottom: 1px solid var(--n2);
         height: 2.5em;
         line-height: 2.5em;
-        padding: 0.5em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
         transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
     }
 

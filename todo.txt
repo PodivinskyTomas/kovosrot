@@ -1,5 +1,4 @@
 NOW:
-- Errorové stránky
 - App Ikona
 - Zvážit integraci https://github.com/jonasmerlin/astro-seo#readme
 - SCHEMA MARKUP FOR SEO https://www.youtube.com/watch?v=7JwJvaE9M2Y&ab_channel=Skillthrive 2:40 cca
@@ -7,6 +6,7 @@ NOW:
 - Zpěknit kontakt?
 - NewsCard responsivity
 - Image s textem Výkup kovového odpadu Litovel do meta tagu
+- Datum vytvoření do aticle + prostě zhečení artiklu
 
 LONG TERM:
 - Zobrazit warning pokud se je v rozmezí jednoho týdne nějaký státní svátek
