@@ -13,7 +13,7 @@ LONG TERM:
 
 ???
 - Text na odd sekcích je docela unreadable
-- Přidat tooltip do CMS tak přidat
+- Přidat tooltip do CMS
 - nav css only
 - https://www.bing.com/webmasters/about
 

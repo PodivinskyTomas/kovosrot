@@ -2,6 +2,7 @@
 import AppHeader from "../components/AppHeader.vue";
 import AppNav from "../components/AppNav.vue";
 import AppFooter from "../components/AppFooter.vue";
+import BaseLayout from "./BaseLayout.astro";
 
 export interface Props {
     title: string;
@@ -14,46 +15,15 @@ const metaDescription =
     "Webové stránky s informacemi a novinkami o kovošrotu Litovel - Podivínský";
 ---
 
-<!DOCTYPE html>
-<html lang="cs">
-    <head>
-        <meta name="generator" content={Astro.generator} />
-        <meta charset="UTF-8" />
+<BaseLayout
+    title={title}
+    includeHeader={includeHeader}
+    metaDescription={metaDescription}
+>
+    <slot />
+</BaseLayout>
 
-        <meta name="viewport" content="width=device-width" />
-        <meta
-            name="keywords"
-            content="kovošrot, výkup kovových odpadů, sběrna"
-        />
-        <meta name="description" content={metaDescription} />
-        <meta name="author" content="Tomáš Podivínský" />
-
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="/header-photo.webp" />
-        <meta property="og:description" content={metaDescription} />
-        <meta property="og:title" content={title} />
-
-        <title>{title}</title>
-    </head>
-    <body>
-        {includeHeader && <AppHeader />}
-        <AppNav />
-        <main class="content">
-            <slot />
-        </main>
-        <AppFooter />
-    </body>
-</html>
 <style is:global>
-    :root {
-        --content-padding: 6rem;
-        --section-vertical-padding: 3rem;
-    }
-
-    .content {
-        text-align: center;
-        margin: auto;
-    }
     .content section {
         padding-left: var(--content-padding);
         padding-right: var(--content-padding);
@@ -67,33 +37,5 @@ const metaDescription =
     }
     .content > section:nth-of-type(odd) {
         background-color: var(--n6);
-    }
-    @media only screen and (max-width: 1000px) {
-        :root {
-            --content-padding: 5rem;
-        }
-    }
-    @media only screen and (max-width: 920px) {
-        :root {
-            --content-padding: 4rem;
-        }
-    }
-    @media only screen and (max-width: 870px) {
-        :root {
-            --content-padding: 2rem;
-        }
-    }
-    @media only screen and (max-width: 400px) {
-        :root {
-            --content-padding: 1rem;
-        }
-    }
-    html {
-        font-family: system-ui, sans-serif;
-        background-color: #f6f6f6;
-    }
-    code {
-        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
     }
 </style>

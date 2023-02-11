@@ -1,0 +1,88 @@
+---
+import AppHeader from "../components/AppHeader.vue";
+import AppNav from "../components/AppNav.vue";
+import AppFooter from "../components/AppFooter.vue";
+
+export interface Props {
+    title: string;
+    includeHeader?: boolean;
+    metaDescription: string;
+}
+
+const { title, includeHeader = false, metaDescription } = Astro.props;
+
+// const metaDescription =
+//     "Webové stránky s informacemi a novinkami o kovošrotu Litovel - Podivínský";
+---
+
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta name="generator" content={Astro.generator} />
+        <meta charset="UTF-8" />
+
+        <meta name="viewport" content="width=device-width" />
+        <meta name="author" content="Tomáš Podivínský" />
+
+        <meta
+            name="keywords"
+            content="kovošrot, výkup kovových odpadů, sběrna"
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/header-photo.webp" />
+
+        <meta property="og:description" content={metaDescription} />
+        <meta name="description" content={metaDescription} />
+
+        <meta property="og:title" content={title} />
+        <title>{title}</title>
+    </head>
+    <body>
+        {includeHeader && <AppHeader />}
+        <AppNav />
+        <main class="content">
+            <slot />
+        </main>
+        <AppFooter />
+    </body>
+</html>
+<style is:global>
+    :root {
+        --content-padding: 6rem;
+        --section-vertical-padding: 3rem;
+    }
+
+    .content {
+        text-align: center;
+        margin: auto;
+    }
+    @media only screen and (max-width: 1000px) {
+        :root {
+            --content-padding: 5rem;
+        }
+    }
+    @media only screen and (max-width: 920px) {
+        :root {
+            --content-padding: 4rem;
+        }
+    }
+    @media only screen and (max-width: 870px) {
+        :root {
+            --content-padding: 2rem;
+        }
+    }
+    @media only screen and (max-width: 400px) {
+        :root {
+            --content-padding: 1rem;
+        }
+    }
+    html {
+        font-family: system-ui, sans-serif;
+        background-color: #f6f6f6;
+    }
+    code {
+        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+    }
+</style>

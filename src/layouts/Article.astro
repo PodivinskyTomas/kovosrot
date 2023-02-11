@@ -3,35 +3,20 @@ import AppHeader from "../components/AppHeader.vue";
 import AppNav from "../components/AppNav.vue";
 import AppFooter from "../components/AppFooter.vue";
 import "../styles/global.css";
+import BaseLayout from "./BaseLayout.astro";
 const { frontmatter } = Astro.props;
+
+const title = `Kovošrot Podivínský - ${frontmatter.title}`;
 ---
 
-<!DOCTYPE html>
-<html lang="cs">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="generator" content={Astro.generator} />
-        <meta
-            name="description"
-            content="Výkup kovového odpadu Litovel Vladimír Podivínský"
-        />
-        <meta name="author" content="Tomáš Podivínský" />
-        <title>Kovošrot Podivínský - {frontmatter.title}</title>
-    </head>
-    <body>
-        <AppNav />
-        <main class="content">
-            <article>
-                <h2>{frontmatter.title}</h2>
-                <hr />
-                <slot />
-            </article>
-        </main>
-        <AppFooter />
-    </body>
-</html>
+<BaseLayout includeHeader={false} title={title} metaDescription="TODO">
+    <article>
+        <h2>{frontmatter.title}</h2>
+        <hr />
+        <slot />
+    </article>
+</BaseLayout>
+
 <style>
     :root {
         --content-padding: 6rem;
@@ -43,54 +28,18 @@ const { frontmatter } = Astro.props;
         );
     }
 
-    .content {
-        text-align: center;
-        margin: auto;
-    }
-    .content article {
+    article {
         padding-left: var(--content-padding);
         padding-right: var(--content-padding);
         background-color: var(--n5);
         padding-top: var(--section-vertical-padding);
         padding-bottom: var(--section-vertical-padding);
-    }
-    .content article h2 {
-        scroll-margin-top: 4em;
-        margin-bottom: 1rem;
-    }
-    .content > article:nth-of-type(odd) {
-        background-color: var(--n6);
-    }
-    @media only screen and (max-width: 1000px) {
-        :root {
-            --content-padding: 5rem;
-        }
-    }
-    @media only screen and (max-width: 920px) {
-        :root {
-            --content-padding: 4rem;
-        }
-    }
-    @media only screen and (max-width: 870px) {
-        :root {
-            --content-padding: 2rem;
-        }
-    }
-    @media only screen and (max-width: 400px) {
-        :root {
-            --content-padding: 1rem;
-        }
-    }
-    html {
-        font-family: system-ui, sans-serif;
-        background-color: #f6f6f6;
-    }
-    code {
-        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-    }
-    article {
         text-align: left;
         min-height: var(--min-height);
+        background-color: var(--n6);
+    }
+    article h2 {
+        scroll-margin-top: 4em;
+        margin-bottom: 1rem;
     }
 </style>
