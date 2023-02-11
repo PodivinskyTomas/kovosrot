@@ -6,15 +6,13 @@ NOW:
 - Zpěknit kontakt?
 - NewsCard responsivity
 - Image s textem Výkup kovového odpadu Litovel do meta tagu
-- Datum vytvoření do aticle + prostě zhečení artiklu
-- Titulky co cmska
+- Prostě zhečení artiklu
 
 LONG TERM:
 - Zobrazit warning pokud se je v rozmezí jednoho týdne nějaký státní svátek
 
 ???
 - Text na odd sekcích je docela unreadable
-- Přidat tooltip do CMS
 - nav css only
 - https://www.bing.com/webmasters/about
 - Fixnout dns záznamy

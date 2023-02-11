@@ -36,7 +36,6 @@ nav {
 }
 
 .nav__title {
-    width: 50%;
     text-decoration: none;
     color: black;
 }
@@ -48,6 +47,7 @@ nav {
     font-weight: bold;
     padding: 1rem;
     height: calc(48px + 0.28125rem * 2 - 2rem);
+    line-height: calc(48px + 0.28125rem * 2 - 2rem);
     transition: 0.4s ease;
 }
 
@@ -110,7 +110,7 @@ nav {
     transform: rotate(-405deg);
 }
 
-@media (max-width: 1320px) {
+@media (max-width: 1000px) {
     nav {
         padding: 0.28125rem 1rem 0.28125rem var(--content-padding);
     }
