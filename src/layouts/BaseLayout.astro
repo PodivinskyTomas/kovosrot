@@ -6,13 +6,12 @@ import AppFooter from "../components/AppFooter.vue";
 export interface Props {
     title: string;
     includeHeader?: boolean;
-    metaDescription: string;
 }
 
-const { title, includeHeader = false, metaDescription } = Astro.props;
+const { title, includeHeader = false } = Astro.props;
 
-// const metaDescription =
-//     "Webové stránky s informacemi a novinkami o kovošrotu Litovel - Podivínský";
+const metaDescription =
+    "Jsme rodinná firma založená 1.2.2000, provozující sběrné suroviny a kovošrot. Můžete nás nalézt v Litovli na ulici Cholinská 1276/1 (hned vedle autobazaru Truxa). Rádi vykoupíme Váš kovový odpad za výhodnou cenu.";
 ---
 
 <!DOCTYPE html>
@@ -26,7 +25,7 @@ const { title, includeHeader = false, metaDescription } = Astro.props;
 
         <meta
             name="keywords"
-            content="kovošrot, výkup kovových odpadů, sběrna"
+            content="kovošrot Litovel, výkup kovových odpadů Litovel, sběrna Litovel, Vladimír Podivínský, kovošrot Podivínský"
         />
 
         <meta property="og:type" content="website" />

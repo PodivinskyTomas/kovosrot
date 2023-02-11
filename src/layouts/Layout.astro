@@ -1,7 +1,4 @@
 ---
-import AppHeader from "../components/AppHeader.vue";
-import AppNav from "../components/AppNav.vue";
-import AppFooter from "../components/AppFooter.vue";
 import BaseLayout from "./BaseLayout.astro";
 
 export interface Props {
@@ -10,16 +7,9 @@ export interface Props {
 }
 
 const { title, includeHeader = false } = Astro.props;
-
-const metaDescription =
-    "Webové stránky s informacemi a novinkami o kovošrotu Litovel - Podivínský";
 ---
 
-<BaseLayout
-    title={title}
-    includeHeader={includeHeader}
-    metaDescription={metaDescription}
->
+<BaseLayout title={title} includeHeader={includeHeader}>
     <slot />
 </BaseLayout>
 

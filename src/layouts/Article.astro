@@ -1,7 +1,4 @@
 ---
-import AppHeader from "../components/AppHeader.vue";
-import AppNav from "../components/AppNav.vue";
-import AppFooter from "../components/AppFooter.vue";
 import "../styles/global.css";
 import BaseLayout from "./BaseLayout.astro";
 const { frontmatter } = Astro.props;
@@ -9,7 +6,7 @@ const { frontmatter } = Astro.props;
 const title = `Kovošrot Podivínský - ${frontmatter.title}`;
 ---
 
-<BaseLayout includeHeader={false} title={title} metaDescription="TODO">
+<BaseLayout includeHeader={false} title={title}>
     <article>
         <h2>{frontmatter.title}</h2>
         <hr />
@@ -19,8 +16,6 @@ const title = `Kovošrot Podivínský - ${frontmatter.title}`;
 
 <style>
     :root {
-        --content-padding: 6rem;
-        --section-vertical-padding: 3rem;
         --nav-height: calc(calc(0.28125rem * 2 + 48px) * 2);
         --footer-height: calc(2rem + 3em);
         --min-height: calc(
