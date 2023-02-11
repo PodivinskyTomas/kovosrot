@@ -4,11 +4,19 @@ import BaseLayout from "./BaseLayout.astro";
 const { frontmatter } = Astro.props;
 
 const title = `Kovošrot Podivínský - ${frontmatter.title}`;
+
+let date: string = frontmatter.creation_date;
+date = date.substring(0, date.indexOf("T")).replaceAll("-", ".");
+const dateParts = date.split(".");
+const finalDate = `${dateParts[2]}.${dateParts[1]}.${dateParts[0]}`;
 ---
 
 <BaseLayout includeHeader={false} title={title}>
     <article>
-        <h2>{frontmatter.title}</h2>
+        <div class="row">
+            <h2>{frontmatter.title}</h2>
+            <i>{finalDate}</i>
+        </div>
         <hr />
         <slot />
     </article>
@@ -33,8 +41,12 @@ const title = `Kovošrot Podivínský - ${frontmatter.title}`;
         min-height: var(--min-height);
         background-color: var(--n6);
     }
-    article h2 {
-        scroll-margin-top: 4em;
-        margin-bottom: 1rem;
+    article hr {
+        margin-top: 1rem;
+    }
+    .row {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
     }
 </style>
