@@ -124,6 +124,7 @@ export default defineConfig({
     integrations: [NetlifyCMS({
         previewStyles: [],
         adminPath: "/administrace",
+        disableIdentityWidgetInjection: true,
         config: {
             locale: "cs",
             search: false,
