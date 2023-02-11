@@ -7,6 +7,7 @@ NOW:
 - NewsCard responsivity
 - Image s textem Výkup kovového odpadu Litovel do meta tagu
 - Datum vytvoření do aticle + prostě zhečení artiklu
+- Titulky co cmska
 
 LONG TERM:
 - Zobrazit warning pokud se je v rozmezí jednoho týdne nějaký státní svátek
@@ -16,6 +17,7 @@ LONG TERM:
 - Přidat tooltip do CMS
 - nav css only
 - https://www.bing.com/webmasters/about
+- Fixnout dns záznamy
 
 Lighthouse
 - Líné načítání pomocí fasád

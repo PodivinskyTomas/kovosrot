@@ -14,10 +14,11 @@ const articleCollection = {
     folder: CMS_COLLECTION_LOCATIONS.ARTICLES,
     create: true,
     slug: "{{year}}-{{month}}-{{day}}-{{title}}",
+    description: "Aktuální události. Zobrazují se na stránce hned v první sekci. Pište sem třeba dovolené nebo nějaké velké změny v chodu firmy.",
     fields: [{
         label: "Titulek",
         name: "title",
-        widget: "string"
+        widget: "string",
     },
     {
         label: "Datum vytvoření",
@@ -30,15 +31,14 @@ const articleCollection = {
         label: "Zpráva",
         name: "body",
         widget: "markdown",
-        sanitize_preview: true
+        sanitize_preview: true,
     },
     {
         label: "Layout",
         name: "layout",
         widget: "hidden",
         default: "../../layouts/Article.astro",
-    }
-    ]
+    }]
 };
 
 function pageTextsItem(filename) {
@@ -57,7 +57,7 @@ const openingHoursCollection = {
         label: "Text",
         name: "body",
         widget: "markdown",
-        sanitize_preview: true
+        sanitize_preview: true,
     }]
 };
 const aboutUsCollection = {
@@ -87,6 +87,7 @@ const whatWeBuy = {
 const pageTexts = {
     name: "page_texts",
     label: "Texty na stránce",
+    description: "Nastavení textů v jednotlivých sekcích stránky",
     files: [
         openingHoursCollection,
         aboutUsCollection,

@@ -39,8 +39,13 @@ const fileContent = openingHoursFile.rawContent.call(this);
 
 let openingHours: string[][] = [];
 const openingHoursRows: string[] = fileContent.split("\n");
-for (const row of openingHoursRows) {
-    openingHours.push(row.split(" "));
+for (const row: string of openingHoursRows) {
+    if (row.length > 0 && row.trim().indexOf(" ") !== -1) {
+        const rowParts = [];
+        rowParts.push(row.trim().substring(0, row.trim().indexOf(" ")));
+        rowParts.push(row.trim().substring(row.trim().indexOf(" ") + 1));
+        openingHours.push(rowParts);
+    }
 }
 
 let rows: string[] = frontmatter.list;
