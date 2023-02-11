@@ -39,7 +39,7 @@ const fileContent = openingHoursFile.rawContent.call(this);
 
 let openingHours: string[][] = [];
 const openingHoursRows: string[] = fileContent.split("\n");
-for (const row: string of openingHoursRows) {
+for (const row of openingHoursRows) {
     if (row.length > 0 && row.trim().indexOf(" ") !== -1) {
         const rowParts = [];
         rowParts.push(row.trim().substring(0, row.trim().indexOf(" ")));
@@ -114,9 +114,13 @@ let rows: string[] = frontmatter.list;
     if (menuCheckbox !== null) {
         const navLinks = document.getElementsByClassName("app-nav__link");
         for (const link of navLinks) {
-            link.addEventListener("click", () => {
-                menuCheckbox.checked = !menuCheckbox.checked;
-            });
+            link.addEventListener(
+                "click",
+                () => {
+                    menuCheckbox.checked = !menuCheckbox.checked;
+                },
+                { passive: true }
+            );
         }
     }
 </script>
