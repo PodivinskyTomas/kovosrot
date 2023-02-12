@@ -8,8 +8,26 @@ import AppWarning from "../components/AppWarning.vue";
 import WhatWeBuyTable from "../components/WhatWeBuyTable.vue";
 import { Content } from "../content/page_texts/about_us.md";
 import { frontmatter } from "../content/page_texts/what_we_buy.md";
+import type { MarkdownInstance } from "astro";
 
-async function loadArticles() {
+const actualities = await fetchActualities();
+const news = await atualities(actualities);
+
+async function atualities(
+    actualities: MarkdownInstance<Record<string, any>>[]
+) {
+    const numberOfNewsToLoad = 3;
+    return actualities
+        .sort((file1, file2) =>
+            sortArticlesByDate(
+                file1.frontmatter.creation_date,
+                file2.frontmatter.creation_date
+            )
+        )
+        .slice(0, numberOfNewsToLoad);
+}
+
+async function fetchActualities() {
     try {
         return await Astro.glob("../pages/aktualita/*.md");
     } catch (e) {
@@ -17,35 +35,70 @@ async function loadArticles() {
     }
 }
 
-const numberOfNewsToLoad = 3;
-const news = (await loadArticles())
-    .sort((d1, d2): number => {
-        let date1 = new Date(d1.frontmatter.date).getTime();
-        let date2 = new Date(d2.frontmatter.date).getTime();
+function sortArticlesByDate(d1: Date, d2: Date): number {
+    let date1 = new Date(d1).getTime();
+    let date2 = new Date(d2).getTime();
 
-        if (date1 > date2) {
-            return 2;
-        } else if (date1 < date2) {
-            return 1;
-        }
-        return 0;
-    })
-    .slice(0, numberOfNewsToLoad);
-
-const openingHoursFile = (
-    await Astro.glob("../content/page_texts/provozni_doba.md")
-)[0];
-const fileContent = openingHoursFile.rawContent.call(this);
-
-let openingHours: string[][] = [];
-const openingHoursRows: string[] = fileContent.split("\n");
-for (const row of openingHoursRows) {
-    if (row.length > 0 && row.trim().indexOf(" ") !== -1) {
-        const rowParts = [];
-        rowParts.push(row.trim().substring(0, row.trim().indexOf(" ")));
-        rowParts.push(row.trim().substring(row.trim().indexOf(" ") + 1));
-        openingHours.push(rowParts);
+    if (date1 > date2) {
+        return 2;
+    } else if (date1 < date2) {
+        return 1;
     }
+    return 0;
+}
+
+const oldestActiveVacationWarning = loadVacationWarning(actualities);
+let oldestActiveVacationWarningText = null;
+if (oldestActiveVacationWarning !== null) {
+    oldestActiveVacationWarningText =
+        oldestActiveVacationWarning.rawContent.call(this);
+}
+function loadVacationWarning(
+    actualities: MarkdownInstance<Record<string, any>>[]
+) {
+    const actualitiesFromOldest = actualities
+        .filter((actuality) => actuality.frontmatter.vacation === true)
+        .sort((file1, file2) =>
+            sortArticlesByDate(
+                file1.frontmatter.show_until,
+                file2.frontmatter.show_until
+            )
+        )
+        .reverse();
+
+    const currentDate = new Date();
+    for (const oldestActuality of actualitiesFromOldest) {
+        if (currentDate < new Date(oldestActuality.frontmatter.show_until)) {
+            return oldestActuality;
+        }
+    }
+    return null;
+}
+
+const openingHours: string[][] = await loadOpeningHours();
+async function loadOpeningHours(this: any) {
+    const openingHoursFile = await fetchOpeningHoursFile();
+    const fileContent = openingHoursFile.rawContent.call(this);
+
+    return extractOpeningHoursRows(fileContent);
+}
+
+async function fetchOpeningHoursFile() {
+    return (await Astro.glob("../content/page_texts/provozni_doba.md"))[0];
+}
+
+function extractOpeningHoursRows(fileContent: string) {
+    let openingHours: string[][] = [];
+    for (let row of fileContent.split("\n")) {
+        row = row.trim();
+        if (row.length == 0 || row.indexOf(" ") === -1) continue;
+
+        openingHours.push([
+            row.substring(0, row.indexOf(" ")),
+            row.substring(row.indexOf(" ") + 1),
+        ]);
+    }
+    return openingHours;
 }
 
 let rows: string[] = frontmatter.list;
@@ -66,10 +119,20 @@ let rows: string[] = frontmatter.list;
     </section>
     <section class="content__opening_hours">
         <h2 id="provozníDoba">Kdy nás můžete zastihnout?</h2>
-        <!-- <AppWarning
-            class="warning"
-            text="Dne 24.4 je státní svátek a bude zavřeno."
-        /> -->
+        {
+            oldestActiveVacationWarning !== null && (
+                <>
+                    <p id="show_warning_until" class="hidden">
+                        {oldestActiveVacationWarning.frontmatter.show_until}
+                    </p>
+                    <AppWarning
+                        id="opening_hours_warning"
+                        class="warning hidden"
+                        text={oldestActiveVacationWarningText}
+                    />
+                </>
+            )
+        }
         <InformationTable information={openingHours} />
     </section>
     <section class="content__about_us">
@@ -123,11 +186,23 @@ let rows: string[] = frontmatter.list;
             );
         }
     }
+
+    const showWarningUntil = document.getElementById("show_warning_until");
+    if (showWarningUntil !== null) {
+        const showUntilDate = new Date(showWarningUntil.innerText.trim());
+        if (new Date() < showUntilDate) {
+            const warning = document.getElementById("opening_hours_warning");
+            warning.classList.remove("hidden");
+        }
+    }
 </script>
 
 <style is:global>
     @import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
 
+    .hidden {
+        display: none;
+    }
     .mapComponent-section {
         height: 300px;
         margin-bottom: 1rem;

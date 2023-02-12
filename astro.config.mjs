@@ -21,17 +21,33 @@ const articleCollection = {
         widget: "string",
     },
     {
-        label: "Datum vytvoření",
-        name: "creation_date",
-        date_format: "DD.MM.YYYY",
-        time_format: false,
-        widget: "datetime"
-    },
-    {
         label: "Zpráva",
         name: "body",
         widget: "markdown",
         sanitize_preview: true,
+    },
+    {
+        label: "Dovolená",
+        name: "vacation",
+        hint: "Jedná se o dovolenou?",
+        widget: "boolean"
+    },
+    {
+        label: "Zobrazovat do (vyplňovat pouze pokud se jedná o dovolenou)",
+        name: "show_until",
+        hint: "Do kdy by se mělo zobrazovat upozornění na dovolenou",
+        default: "",
+        date_format: "DD.MM.YYYY",
+        time_format: false,
+        widget: "datetime",
+        required: false,
+        picker_utc: true
+    },
+    {
+        label: "Datum vytvoření",
+        name: "creation_date",
+        default: new Date(),
+        widget: "hidden"
     },
     {
         label: "Layout",
@@ -94,29 +110,6 @@ const pageTexts = {
         whatWeBuy
     ]
 }
-// const openingHoursDayWarnings = {
-//     name: "warnings",
-//     label: "Varování - změna otevírací doby",
-//     folder: "public/cms/warnings/opening_hours",
-//     create: true,
-//     slug: "{{year}}-{{month}}-{{day}}-{{title}}",
-//     fields: [
-//         { label: "Zobrazovat do", name: "show_until", widget: "date" },
-//         { label: "Zpráva", name: "body", widget: "markdown" },
-//         {
-//             label: "dny",
-//             name: "days",
-//             widget: "list",
-//             fields: [
-//                 {
-//                     label: "Začátek",
-//                     name: "start",
-//                     widget: "date",
-//                 }
-//             ]
-//         }
-//     ]
-// }
 
 // https://astro.build/config
 export default defineConfig({
