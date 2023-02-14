@@ -140,6 +140,7 @@ nav {
 
     #menu-toggle:checked~.menu a {
         border-bottom: 1px solid var(--n2);
+        border-top: 1px solid var(--n2);
         height: 2.5em;
         line-height: 2.5em;
         padding-top: 0.5em;
