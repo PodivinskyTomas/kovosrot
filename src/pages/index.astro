@@ -57,7 +57,10 @@ function loadVacationWarning(
     actualities: MarkdownInstance<Record<string, any>>[]
 ) {
     const actualitiesFromOldest = actualities
-        .filter((actuality) => actuality.frontmatter.vacation === true)
+        .filter(
+            (actuality) =>
+                actuality.frontmatter.is_opening_hours_change === true
+        )
         .sort((file1, file2) =>
             sortArticlesByDate(
                 file1.frontmatter.show_until,

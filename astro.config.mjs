@@ -27,10 +27,11 @@ const articleCollection = {
         sanitize_preview: true,
     },
     {
-        label: "Dovolená",
-        name: "vacation",
-        hint: "Jedná se o dovolenou?",
-        widget: "boolean"
+        label: "Jedná se o změnu pracovní doby?",
+        name: "is_opening_hours_change",
+        widget: "boolean",
+        required: false,
+        default: false
     },
     {
         label: "Zobrazovat do (vyplňovat pouze pokud se jedná o dovolenou)",
@@ -105,8 +106,8 @@ const pageTexts = {
     label: "Texty na stránce",
     description: "Nastavení textů v jednotlivých sekcích stránky",
     files: [
-        openingHoursCollection,
         aboutUsCollection,
+        openingHoursCollection,
         whatWeBuy
     ]
 }

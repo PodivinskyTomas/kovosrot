@@ -16,12 +16,7 @@ export default {
     name: "NewsCard",
     computed: {
         fileContent(): string {
-            const fileContent: string = this.file.rawContent.call(this);
-            const maxTextLength = 48;
-            if (fileContent.length > maxTextLength) {
-                return fileContent.substring(0, maxTextLength) + " [...]";
-            }
-            return fileContent;
+            return this.file.rawContent.call(this);
         }
     },
     props: {
@@ -73,15 +68,25 @@ export default {
     padding: 0.5rem;
     border-radius: 12px;
     text-align: center;
+    width: 4.6875rem;
+    height: 4.6875rem;
 }
 
 .news-card__content {
     padding: 0.5rem 0 0.5rem 1.5rem;
     text-align: left;
-    max-width: 200px;
+    max-width: 12.5rem;
+    max-height: 4.6875rem;
 }
 
 .news-card__content h3 {
     margin-bottom: 0.5rem;
+}
+
+.news-card__content p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 </style>
