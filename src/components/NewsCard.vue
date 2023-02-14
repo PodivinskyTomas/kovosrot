@@ -1,7 +1,7 @@
 <template>
     <a :href="'/aktualita/' + file.file.substring(file.file.lastIndexOf('/') + 1, file.file.length - '.md'.length)"
         class="news-card">
-        <div class="news-card__date-box">
+        <div class="news-card__date_box">
             <h3>{{ day }}</h3>
             <h3>{{ month }}, {{ year }}</h3>
         </div>
@@ -59,7 +59,7 @@ export default {
     box-shadow: 0px 0px 10px 0px grey;
 }
 
-.news-card__date-box {
+.news-card__date_box {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -88,5 +88,22 @@ export default {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+}
+
+@media screen and (max-width: 400px) {
+    .news-card {
+        width: 100%;
+    }
+
+    .news-card__date_box {
+        display: none;
+    }
+
+    .news-card__content {
+        padding: 0;
+        max-width: 100%;
+        max-height: 100%;
+        text-align: center;
+    }
 }
 </style>
