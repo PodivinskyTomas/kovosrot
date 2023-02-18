@@ -1,6 +1,6 @@
 <template>
     <nav ref="nav">
-        <a href="/" class="nav__title">
+        <a href="/" title="Zpět na hlavní stránku" class="nav__title">
             <h3>Výkup kovového opadu Litovel</h3>
         </a>
         <input id="menu-toggle" type="checkbox" />
@@ -11,7 +11,7 @@
             <a href="/#aktuality" title="Aktuality" class="app-nav__link">Aktuality</a>
             <a href="/#oNás" title="O nás" class="app-nav__link">O nás</a>
             <a href="/#provozníDoba" title="Provozní doba" class="app-nav__link">Provozní doba</a>
-            <a href="/#coVykupujeme" title="Co vykupujeme" class="app-nav__link">Co vykupujeme</a>
+            <a href="/#coVykupujeme" title="Seznam vykupovaného zboží" class="app-nav__link">Co vykupujeme</a>
             <a href="/#kontakt" title="Kontakt" class="app-nav__link">Kontakt</a>
         </div>
     </nav>
