@@ -7,8 +7,8 @@ list:
   - Železné kovy
   - Neželezné kovy
   - Měď
-  - bronz
-  - mosaz
+  - Bronz
+  - Mosaz
   - Hliník
   - Olovo
   - Zinek
