@@ -17,14 +17,13 @@ async function atualities(
     actualities: MarkdownInstance<Record<string, any>>[]
 ) {
     const numberOfNewsToLoad = 3;
-    return actualities
-        .sort((file1, file2) =>
-            sortArticlesByDate(
-                file1.frontmatter.creation_date,
-                file2.frontmatter.creation_date
-            )
-        )
-        .slice(0, numberOfNewsToLoad);
+    actualities.sort(function (file1, file2) {
+        return (
+            new Date(file2.frontmatter.creation_date).getTime() -
+            new Date(file1.frontmatter.creation_date).getTime()
+        );
+    });
+    return actualities.slice(0, numberOfNewsToLoad);
 }
 
 async function fetchActualities() {
