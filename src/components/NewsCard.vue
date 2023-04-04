@@ -49,6 +49,7 @@ export default {
     border-radius: 12px;
     padding: 1.5rem;
     display: flex;
+    justify-content: center;
     box-sizing: border-box;
     word-wrap: break-word;
     transition: 0.4s ease;
