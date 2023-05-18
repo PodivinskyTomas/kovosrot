@@ -1,10 +1,8 @@
 NOW:
-- App Ikona
 - Zvážit integraci https://github.com/jonasmerlin/astro-seo#readme
 - SCHEMA MARKUP FOR SEO https://www.youtube.com/watch?v=7JwJvaE9M2Y&ab_channel=Skillthrive 2:40 cca
 - Lepší animace
 - Zpěknit kontakt?
-- Image s textem Výkup kovového odpadu Litovel do meta tagu
 - Prostě zhečení artiklu
 
 LONG TERM:
