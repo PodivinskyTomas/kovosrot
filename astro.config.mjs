@@ -123,7 +123,7 @@ export default defineConfig({
             collections: [articleCollection, pageTexts]
         }
     }), vue(), compress(), sitemap({
-        filter: (page) => page !== 'https://www.sbernalitovel.cz/administrace/'
+        filter: (page) => page !== 'https://www.sbernalitovel.cz/administrace/' && page !== 'https://www.sbernalitovel.cz/administrace'
     }), prefetch({
         throttle: 3
     }), purgecss()]
