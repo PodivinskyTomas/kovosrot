@@ -139,16 +139,16 @@ let rows: string[] = frontmatter.list;
     </section>
     <section class="content__about_us">
         <h2 id="coVykupujeme" class="about_us_text">Co vykupujeme?</h2>
+        <WhatWeBuyTable rows={rows} />
         <p class="what_we_buy_paragraph">
             <i
                 >(Minimální vykupované množství odpadu je u železa stanoveno na
                 30 kg za dodávku.<br />
                 Menší množství může být přebráno zdarma k likvidaci.<br />
                 Vykupované množství barevných kovů stanovujeme od minimální částky
-                100,- Kč za dodávku. (bankovním převodem))</i
-            >
+                100,- Kč za dodávku. (bankovním převodem))
+            </i>
         </p>
-        <WhatWeBuyTable rows={rows} />
     </section>
     <section class="content__contact">
         <h2 id="kontakt">Kontakt</h2>
@@ -215,7 +215,7 @@ if (showWarningUntil !== null) {
     @import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
 
     .what_we_buy_paragraph {
-        margin: 0.4rem auto !important;
+        margin-top: 1rem !important;
     }
     .hidden {
         display: none;
