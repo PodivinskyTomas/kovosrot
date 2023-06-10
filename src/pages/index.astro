@@ -139,6 +139,15 @@ let rows: string[] = frontmatter.list;
     </section>
     <section class="content__about_us">
         <h2 id="coVykupujeme" class="about_us_text">Co vykupujeme?</h2>
+        <p class="what_we_buy_paragraph">
+            <i
+                >(Minimální vykupované množství odpadu je u železa stanoveno na
+                30 kg za dodávku.<br />
+                Menší množství může být přebráno zdarma k likvidaci.<br />
+                Vykupované množství barevných kovů stanovujeme od minimální částky
+                100,- Kč za dodávku. (bankovním převodem))</i
+            >
+        </p>
         <WhatWeBuyTable rows={rows} />
     </section>
     <section class="content__contact">
@@ -158,7 +167,10 @@ let rows: string[] = frontmatter.list;
                     <i class="fa-solid fa-location-dot"></i>
                 </div>
                 <p><b>Adresa</b></p>
-                <a href="https://www.google.com/maps/place/V%C3%BDkup+kovov%C3%A9ho+odpadu+Litovel/@49.6908301,17.0708025,16.56z/data=!4m6!3m5!1s0x471241dadd90dcef:0x72b3bbfc516c8c64!8m2!3d49.6910708!4d17.0720796!16s%2Fg%2F11shwm46hh?hl=en">Cholinská 1276/1, 784 01 Litovel</a>
+                <a
+                    href="https://www.google.com/maps/place/V%C3%BDkup+kovov%C3%A9ho+odpadu+Litovel/@49.6908301,17.0708025,16.56z/data=!4m6!3m5!1s0x471241dadd90dcef:0x72b3bbfc516c8c64!8m2!3d49.6910708!4d17.0720796!16s%2Fg%2F11shwm46hh?hl=en"
+                    >Cholinská 1276/1, 784 01 Litovel</a
+                >
             </div>
             <div>
                 <div class="circled">
@@ -175,33 +187,36 @@ let rows: string[] = frontmatter.list;
 </Layout>
 
 <script is:inline>
-    const menuCheckbox = document.getElementById("menu-toggle");
-    if (menuCheckbox !== null) {
-        const navLinks = document.getElementsByClassName("app-nav__link");
-        for (const link of navLinks) {
-            link.addEventListener(
-                "click",
-                () => {
-                    menuCheckbox.checked = !menuCheckbox.checked;
-                },
-                { passive: true }
-            );
-        }
+const menuCheckbox = document.getElementById("menu-toggle");
+if (menuCheckbox !== null) {
+    const navLinks = document.getElementsByClassName("app-nav__link");
+    for (const link of navLinks) {
+        link.addEventListener(
+            "click",
+            () => {
+                menuCheckbox.checked = !menuCheckbox.checked;
+            },
+            { passive: true }
+        );
     }
+}
 
-    const showWarningUntil = document.getElementById("show_warning_until");
-    if (showWarningUntil !== null) {
-        const showUntilDate = new Date(showWarningUntil.innerText.trim());
-        if (new Date() < showUntilDate) {
-            const warning = document.getElementById("opening_hours_warning");
-            warning.classList.remove("hidden");
-        }
+const showWarningUntil = document.getElementById("show_warning_until");
+if (showWarningUntil !== null) {
+    const showUntilDate = new Date(showWarningUntil.innerText.trim());
+    if (new Date() < showUntilDate) {
+        const warning = document.getElementById("opening_hours_warning");
+        warning.classList.remove("hidden");
     }
+}
 </script>
 
 <style is:global>
     @import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
 
+    .what_we_buy_paragraph {
+        margin: 0.4rem auto !important;
+    }
     .hidden {
         display: none;
     }
