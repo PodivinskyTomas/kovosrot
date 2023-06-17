@@ -6,9 +6,9 @@
             <h3>{{ day }}</h3>
             <h3>{{ month }}, {{ year }}</h3>
         </div>
-        <div class="news-card__content">
+        <div class="news-card__content" :class="{ 'rem-60': isAllList, 'rem-12-5': !isAllList }">
             <h3>{{ file.frontmatter.title }}</h3>
-            <p>{{ fileContent }}</p>
+            <p :class="{ 'one-line': isAllList, 'two-line': !isAllList }">{{ fileContent }}</p>
         </div>
     </a>
 </template>
@@ -24,6 +24,10 @@ export default {
         file: {
             type: Object,
             required: true
+        },
+        isAllList: {
+            type: Boolean,
+            default: false
         }
     },
     created() {
@@ -77,18 +81,32 @@ export default {
 .news-card__content {
     padding: 0.5rem 0 0.5rem 1.5rem;
     text-align: left;
-    max-width: 12.5rem;
     max-height: 4.6875rem;
+}
+
+.rem-60 {
+    max-width: 80%;
+}
+
+.rem-12-5 {
+    max-width: 12.5rem;
 }
 
 .news-card__content h3 {
     margin-bottom: 0.5rem;
 }
 
+.one-line {
+    -webkit-line-clamp: 1;
+}
+
+.two-line {
+    -webkit-line-clamp: 2;
+}
+
 .news-card__content p {
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
 

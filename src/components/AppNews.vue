@@ -1,10 +1,9 @@
 <template>
-    <div class="news-wrapper">
-        <template v-for="file in files">
-            <NewsCard
-                :file="file"
-            />
-        </template>
+    <div>
+        <div class="news-wrapper">
+            <NewsCard v-for="file in files" :file="file" />
+        </div>
+        <a class="show_all" href="/aktuality/">Zobrazit vše</a>
     </div>
 </template>
 <script lang="ts">
@@ -30,9 +29,30 @@ export default {
     margin: auto;
     justify-content: space-evenly;
 }
-.news-wrapper > .news-card {
+
+.news-wrapper>.news-card {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
     margin-bottom: 1rem;
+}
+
+.show_all {
+    margin-top: 2.5rem;
+    display: inline-block;
+    border-radius: 12px;
+    color: var(--n1);
+    border: 1px solid var(--p1);
+    background-color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 28px;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    transition: 0.4s ease;
+}
+
+.show_all:hover {
+    color: var(--white);
+    background-color: var(--p1);
 }
 </style>

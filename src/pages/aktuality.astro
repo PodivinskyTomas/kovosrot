@@ -1,0 +1,49 @@
+---
+import NewsCard from "../components/NewsCard.vue";
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
+
+const actualities = (
+    (await Astro.glob("../pages/aktualita/*.md")) ?? []
+).reverse();
+console.log(actualities);
+---
+
+<Layout title="Kovošrot Litovel - stránka nenalezena" includeHeader={false}>
+    <section>
+        <h1>Aktuality</h1>
+        <hr />
+        <div class="news_cards">
+            {
+                actualities.map(async (entry) => {
+                    return <NewsCard is-all-list={true} file={entry} />;
+                })
+            }
+        </div>
+    </section>
+</Layout>
+
+<style>
+    :root {
+        --nav-height: calc(calc(0.28125rem * 2 + 48px) * 2);
+        --footer-height: calc(2rem + 3em);
+        --min-height: calc(
+            100vh - var(--nav-height) - var(--footer-height) - 1rem
+        );
+    }
+    section {
+        text-align: left;
+        min-height: var(--min-height);
+    }
+    hr {
+        background-color: var(--p1);
+        height: 5px;
+        border: none;
+    }
+    .news-card {
+        margin-top: 1rem;
+    }
+    .news-card {
+        justify-content: flex-start !important;
+    }
+</style>
