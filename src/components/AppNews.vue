@@ -46,8 +46,8 @@ export default {
     text-decoration: none;
     font-weight: bold;
     padding: 10px 28px;
-    height: calc(48px + 0.28125rem * 2 - 2rem);
-    line-height: calc(48px + 0.28125rem * 2 - 2rem);
+    height: 1.5rem;
+    line-height: 1.5rem;
     transition: 0.4s ease;
 }
 
