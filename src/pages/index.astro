@@ -16,7 +16,6 @@ async function fetchActualities() {
     try {
         return await Astro.glob("../pages/aktualita/*.md");
     } catch (e) {
-        console.log(e);
         return [];
     }
 }

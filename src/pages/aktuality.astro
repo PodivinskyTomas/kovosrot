@@ -6,7 +6,6 @@ import "../styles/global.css";
 const actualities = (
     (await Astro.glob("../pages/aktualita/*.md")) ?? []
 ).reverse();
-console.log(actualities);
 ---
 
 <Layout title="Kovošrot Litovel - aktuality" includeHeader={false}>
