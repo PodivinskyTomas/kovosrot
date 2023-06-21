@@ -8,11 +8,12 @@
             <div class='menu-button'></div>
         </label>
         <div class="menu">
-            <a href="/#aktuality" title="Aktuality" class="app-nav__link">Aktuality</a>
-            <a href="/#oNás" title="O nás" class="app-nav__link">O nás</a>
-            <a href="/#provozníDoba" title="Provozní doba" class="app-nav__link">Provozní doba</a>
-            <a href="/#coVykupujeme" title="Seznam vykupovaného zboží" class="app-nav__link">Co vykupujeme</a>
-            <a href="/#kontakt" title="Kontakt" class="app-nav__link">Kontakt</a>
+            <a href="/#aktuality" title="Odkaz na sekci aktuality" class="app-nav__link">Aktuality</a>
+            <a href="/#oNás" title="Odkaz na sekci o nás" class="app-nav__link">O nás</a>
+            <a href="/#provozníDoba" title="Odkaz na sekci provozní doba" class="app-nav__link">Provozní doba</a>
+            <a href="/#coVykupujeme" title="Odkaz na sekci seznam vykupovaného zboží" class="app-nav__link">Co
+                vykupujeme</a>
+            <a href="/#kontakt" title="Odkaz na sekci kontakt" class="app-nav__link">Kontakt</a>
         </div>
     </nav>
 </template>
