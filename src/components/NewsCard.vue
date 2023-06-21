@@ -1,7 +1,7 @@
 <template>
     <a rel="prefetch"
-        :href="'/aktualita/' + file.file.substring(file.file.lastIndexOf('/') + 1, file.file.length - '.md'.length) + '/'"
-        class="news-card">
+        :href="`/aktualita/${file.file.substring(file.file.lastIndexOf('/') + 1, file.file.length - '.md'.length)}/`"
+        :title="`Odkaz na aktualitu - ${file.frontmatter.title}`" class="news-card">
         <div class="news-card__date_box">
             <h3>{{ day }}</h3>
             <h3>{{ month }}, {{ year }}</h3>

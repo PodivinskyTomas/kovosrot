@@ -3,7 +3,7 @@
         <div class="news-wrapper">
             <NewsCard v-for="file in files" :file="file" />
         </div>
-        <a class="show_all" href="/aktuality/">Zobrazit vše</a>
+        <a class="show_all" title="Zobrazit všechny aktuality" href="/aktuality/">Zobrazit vše</a>
     </div>
 </template>
 <script lang="ts">
