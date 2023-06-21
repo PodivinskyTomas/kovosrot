@@ -1,6 +1,6 @@
 <template>
     <header>
-        <div class="header-wrapper__text-wrapper">
+        <div class="header-wrapper__text-wrapper" role="img" aria-label="Provozovna" title="Provozovna">
             <h1>Výkup kovového odpadu Litovel</h1>
             <h2>Vladimír Podivínský</h2>
         </div>
