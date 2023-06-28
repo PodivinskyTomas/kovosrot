@@ -23,16 +23,17 @@ const articleCollection = {
     }, {
         label: "Zpráva",
         name: "body",
-        widget: "markdown",
+        widget: "text",
         sanitize_preview: true
     }, {
         label: "Jedná se o změnu pracovní doby?",
+        hint: "Zašktrni pokud se jedná o dovolenou nebo třeba o dřívější konec v práci. Pokud zaškrtneš tohle pole, musíš vyplnit pole ZOBRAZOVAT DO",
         name: "is_opening_hours_change",
         widget: "boolean",
         required: false,
         default: false
     }, {
-        label: "Zobrazovat do (vyplňovat pouze pokud se jedná o dovolenou)",
+        label: "Zobrazovat do",
         name: "show_until",
         hint: "Do kdy by se mělo zobrazovat upozornění na dovolenou",
         default: "",
@@ -68,7 +69,7 @@ const openingHoursCollection = {
     fields: [{
         label: "Text",
         name: "body",
-        widget: "markdown",
+        widget: "text",
         sanitize_preview: true
     }]
 };
@@ -80,7 +81,7 @@ const aboutUsCollection = {
     fields: [{
         label: "Text",
         name: "body",
-        widget: "markdown",
+        widget: "text",
         sanitize_preview: true
     }]
 };
