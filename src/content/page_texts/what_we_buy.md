@@ -15,7 +15,7 @@ list:
   - Železo a ocel
   - Cín
   - Směsné kovy
-  - Kabely neuvedené pod číslem 17 04 10
+  - Kabely
   - Papír
   - Kovy
 ---
