@@ -15,7 +15,6 @@
         "@astrojs/sitemap": "^1.0.1",
         "@astrojs/vue": "^2.0.0",
         "astro": "^2.0.14",
-        "astro-compress": "^1.1.29",
         "astro-netlify-cms": "^0.5.3",
         "astro-purgecss": "^2.0.0",
         "vue": "^3.2.45"
