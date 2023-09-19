@@ -4,7 +4,6 @@ import { CMS_COLLECTION_LOCATIONS } from "./src/constants.ts";
 
 // https://astro.build/config
 import vue from "@astrojs/vue";
-import compress from "astro-compress";
 import sitemap from "@astrojs/sitemap";
 import prefetch from "@astrojs/prefetch";
 import purgecss from "astro-purgecss";
@@ -123,7 +122,7 @@ export default defineConfig({
             },
             collections: [articleCollection, pageTexts]
         }
-    }), vue(), compress(), sitemap({
+    }), vue(), sitemap({
         filter: (page) => page !== 'https://www.sbernalitovel.cz/administrace/' && page !== 'https://www.sbernalitovel.cz/administrace'
     }), prefetch({
         throttle: 3
