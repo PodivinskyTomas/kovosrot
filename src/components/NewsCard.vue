@@ -13,6 +13,8 @@
     </a>
 </template>
 <script lang="ts">
+import {ZonedDateTime} from "@js-joda/core";
+
 export default {
     name: "NewsCard",
     computed: {
@@ -31,12 +33,18 @@ export default {
         }
     },
     created() {
-        let date: string = this.file.frontmatter.creation_date;
-        date = date.substring(0, date.indexOf("T")).replaceAll("-", ".");
-        const dateParts = date.split(".");
-        this.day = dateParts[2];
-        this.month = dateParts[1];
-        this.year = dateParts[0];
+        let date = ZonedDateTime.parse(this.file.frontmatter.creation_date);
+        this.day = this.padStr(date.dayOfMonth());
+        this.month = this.padStr(date.monthValue());
+        this.year = date.year();
+    },
+    methods: {
+      padStr(d: number) {
+        if (d < 10) {
+          return `0${d}`;
+        }
+        return d;
+      },
     },
     data() {
         return {

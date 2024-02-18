@@ -1,12 +1,15 @@
-import { defineConfig } from 'astro/config';
+import {defineConfig} from 'astro/config';
 import NetlifyCMS from 'astro-netlify-cms';
-import { CMS_COLLECTION_LOCATIONS } from "./src/constants.ts";
+import {CMS_COLLECTION_LOCATIONS} from "./src/constants.ts";
 
 // https://astro.build/config
 import vue from "@astrojs/vue";
 import sitemap from "@astrojs/sitemap";
 import prefetch from "@astrojs/prefetch";
 import purgecss from "astro-purgecss";
+import {ZonedDateTime, ZoneId} from "@js-joda/core";
+import * as _ from "@js-joda/timezone";
+
 const articleCollection = {
     name: "article",
     label: "Aktuality",
@@ -44,7 +47,7 @@ const articleCollection = {
     }, {
         label: "Datum vytvoření",
         name: "creation_date",
-        default: new Date(),
+        default: ZonedDateTime.now(ZoneId.of("Europe/Prague")).toString(),
         widget: "hidden"
     }, {
         label: "Layout",

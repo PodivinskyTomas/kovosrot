@@ -1,4 +1,5 @@
 import type { MarkdownInstance } from "astro";
+import {ZonedDateTime} from "@js-joda/core";
 
 export async function actualities(
     actualities: MarkdownInstance<Record<string, any>>[],
@@ -6,8 +7,8 @@ export async function actualities(
 ) {
     actualities.sort(function (file1, file2) {
         return (
-            new Date(file2.frontmatter.creation_date).getTime() -
-            new Date(file1.frontmatter.creation_date).getTime()
+            ZonedDateTime.parse(file2.frontmatter.creation_date).toEpochSecond() -
+            ZonedDateTime.parse(file1.frontmatter.creation_date).toEpochSecond()
         );
     });
     return actualities.slice(0, numberOfNewsToLoad);
