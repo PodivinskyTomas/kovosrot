@@ -16,6 +16,5 @@ list:
   - Cín
   - Směsné kovy
   - Kabely
-  - Papír
   - Kovy
 ---
