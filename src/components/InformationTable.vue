@@ -1,11 +1,14 @@
 <template>
+  <div>
     <div class="information-table">
-        <div v-for="row in information" class="information-table__row">
-            <div v-for="col in row">
-                {{ col }}
-            </div>
+      <div v-for="row in information" class="information-table__row">
+        <div v-for="col in row">
+          {{ col }}
         </div>
+      </div>
     </div>
+    <i>Nutný příjezd nejpozději 10 minut, před koncem otevírací doby.</i>
+  </div>
 </template>
 <script lang="ts">
 export default {
