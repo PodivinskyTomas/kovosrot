@@ -16,5 +16,9 @@ faq:
       břemena vysokozdvižným vozíkem.
   - faq_question: Kdy přijdou peníze?
     faq_answer: Platba převodem může trvat až 3 pracovní dny. Platba většinou
-      proběhne do daného dne.
+      proběhne do následujícího dne.
+  - faq_question: Odvezete nám kovový odpad z domu?
+    faq_answer: Ne, odvoz kovového odpadu zajišťujeme pouze pro firmy.
+  - faq_question: Vezu kamarádovy odpady, stačí jeho občanka?
+    faq_answer: Ne, při výkupu musí doložit občanku osoba, která odpad přivezla.
 ---
