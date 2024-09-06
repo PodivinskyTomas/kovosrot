@@ -2,8 +2,11 @@
 title: Často kladené otázky
 faq:
   - faq_question: Od kolika kilogramů vykupujete železo a barevné kovy?
-    faq_answer: Železo a kovy vykupujeme od 30kg. Barevné kovy vykupujeme od 1kg.
-      Zároveň musí celková částka výkupu dosáhnout minimálně 100 Kč.
+    faq_answer: >-
+      Železo a kovy vykupujeme od 30 kg. Barevné kovy vykupujeme od 1 kg. 
+
+
+      Zároveň musí celková částka výkupu dosáhnout minimálně 100 Kč. Menší množství může být po zaevidování přebráno zdarma k likvidaci.
   - faq_question: Vykupujete za hotovost/na složenky?
     faq_answer: Ne, pouze bankovním převodem.
   - faq_question: Kde můžu zjistit aktuální ceny?
@@ -24,4 +27,16 @@ faq:
   - faq_question: Potvrdíte mi ekologickou ilikvidaci kotle?
     faq_answer: Ano, žádosti vyřizujeme v pracovní dny od pondělí do pátku (soboty
       potvrzení nevydáváme). Musíte mít s sebou vyplněnou žádost.
+  - faq_question: Jak vážíte kovy?
+    faq_answer: >-
+      Větší množství odpadu vážíme na digitální mostové váze s váživostí do 30
+      tun. Menší množství železných a barevných kovů vážíme na digitálních
+      vahách o váživosti 2.5 tuny a 500 kg. Veškeré měřidla jsou řádně ověřena a
+      cejchována.
+
+
+      Železné kovy vážíme na celá kila.
+
+
+      Barevné kovy vážíme na 0.5 kg.
 ---
