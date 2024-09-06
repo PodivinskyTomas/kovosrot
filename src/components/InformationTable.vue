@@ -7,7 +7,9 @@
         </div>
       </div>
     </div>
-    <i>Nutný příjezd nejpozději 10 minut, před koncem otevírací doby.</i>
+    <p>
+      <i>Nutný příjezd nejpozději 10 minut, před koncem otevírací doby.</i>
+    </p>
   </div>
 </template>
 <script lang="ts">

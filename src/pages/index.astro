@@ -8,6 +8,7 @@ import AppWarning from "../components/AppWarning.vue";
 import WhatWeBuyTable from "../components/WhatWeBuyTable.vue";
 import { Content } from "../content/page_texts/about_us.md";
 import { frontmatter } from "../content/page_texts/what_we_buy.md";
+import { frontmatter as faq_data } from "../content/page_texts/faq.md";
 import type { MarkdownInstance } from "astro";
 import { actualities, sortArticlesByDate } from "../logic/actualities";
 
@@ -80,6 +81,8 @@ function extractOpeningHoursRows(fileContent: string) {
 }
 
 let rows: string[] = frontmatter.list;
+let faqTitle = faq_data.title;
+let faq = faq_data.faq
 ---
 
 <Layout title="Kovošrot Litovel Podivínský" includeHeader={true}>
@@ -121,6 +124,20 @@ let rows: string[] = frontmatter.list;
                (Minimální částka převedená na účet je 100 Kč.<br> Kovový odpad za cenu menší než 100 Kč může být přebrán k likvidaci zdarma.<br> Barevné kovy vykupujeme minimálně od 1 kg.)
             </i>
         </p>
+    </section>
+    <section>
+        <h2 id="faq" class="about_us_text">{faqTitle}</h2>
+        <div class="faq_container">
+            {faq.map(faq => (
+                    <div class="accordion">
+                        <i class="fa-solid fa-caret-down  fa-2xl"" style="color: var(--p1);"></i>
+                        {faq.faq_question}
+                    </div>
+                    <div class="panel">
+                        <p>{faq.faq_answer}</p>
+                    </div>
+            ))}
+        </div>
     </section>
     <section class="content__contact">
         <h2 id="kontakt">Kontakt</h2>
@@ -186,6 +203,19 @@ if (showWarningUntil !== null) {
         const warning = document.getElementById("opening_hours_warning");
         warning.classList.remove("hidden");
     }
+}
+
+let acc = document.getElementsByClassName("accordion");
+for (let i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    let panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
 }
 </script>
 
@@ -253,12 +283,57 @@ if (showWarningUntil !== null) {
         .content__contact__wrapper > :nth-child(3) {
             order: 2;
         }
+
+        .accordion {
+            width: 80% !important;
+        }
+        .panel {
+            width: 80% !important;
+        }
     }
 
     @media only screen and (max-width: 600px) {
         .content__about_us p {
             width: 100%;
             margin: auto;
+        }
+    }
+
+    .faq_container {
+        text-align: left;
+    }
+    .accordion {
+        background-color: var(--n5);
+        cursor: pointer;
+        padding: 18px;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+        width: 50%;
+        margin: auto;
+        border-bottom: 1px solid black;
+        display: flex;
+        column-gap: 0.5rem;
+        align-items: center
+    }
+
+    .active, .accordion:hover {
+        background-color: #ccc;
+    }
+
+    .panel {
+        width: 50%;
+        margin: auto;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        padding: 0 18px;
+
+        & p {
+            margin: 1em 0;
         }
     }
 </style>

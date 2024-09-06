@@ -70,7 +70,7 @@ export default {
 }
 
 .news-card:hover {
-    box-shadow: 0px 0px 10px 0px grey;
+    box-shadow: 0 0 10px 0 grey;
 }
 
 .news-card__date_box {
@@ -122,7 +122,7 @@ b {
     font-size: large;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
     .news-card {
         width: 100%;
     }

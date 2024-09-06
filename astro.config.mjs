@@ -98,18 +98,33 @@ const whatWeBuy = {
         widget: "list"
     }]
 };
+const faq = {
+    ...pageTextsItem("faq.md"),
+    name: "faq",
+    label: "Často kladené otázky",
+    slug: "Často kladené otázky",
+    fields: [{
+        label: "Často kladená otázka",
+        name: "faq",
+        widget: "list",
+        fields: [{
+            label: "Otázka",
+            name: "faq_question",
+            widget: "text"
+        }, {
+            label: "Odpověď",
+            name: "faq_answer",
+            widget: "text"
+        }]
+    }]
+}
 const pageTexts = {
     name: "page_texts",
     label: "Texty na stránce",
     description: "Nastavení textů v jednotlivých sekcích stránky",
-    files: [aboutUsCollection, openingHoursCollection, whatWeBuy]
+    files: [aboutUsCollection, openingHoursCollection, whatWeBuy, faq]
 };
 
-// https://astro.build/config
-
-// https://astro.build/config
-
-// https://astro.build/config
 export default defineConfig({
     site: "https://www.sbernalitovel.cz/",
     integrations: [NetlifyCMS({
