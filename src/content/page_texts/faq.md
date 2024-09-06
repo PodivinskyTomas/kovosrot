@@ -21,4 +21,7 @@ faq:
     faq_answer: Ne, odvoz kovového odpadu zajišťujeme pouze pro firmy.
   - faq_question: Vezu kamarádovy odpady, stačí jeho občanka?
     faq_answer: Ne, při výkupu musí doložit občanku osoba, která odpad přivezla.
+  - faq_question: Potvrdíte mi ekologickou ilikvidaci kotle?
+    faq_answer: Ano, žádosti vyřizujeme v pracovní dny od pondělí do pátku (v soboty
+      potvrzení nevydáváme). Musíte mít s sebou vyplněnou žádost.
 ---
