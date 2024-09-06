@@ -22,6 +22,6 @@ faq:
   - faq_question: Vezu kamarádovy odpady, stačí jeho občanka?
     faq_answer: Ne, při výkupu musí doložit občanku osoba, která odpad přivezla.
   - faq_question: Potvrdíte mi ekologickou ilikvidaci kotle?
-    faq_answer: Ano, žádosti vyřizujeme v pracovní dny od pondělí do pátku (v soboty
+    faq_answer: Ano, žádosti vyřizujeme v pracovní dny od pondělí do pátku (soboty
       potvrzení nevydáváme). Musíte mít s sebou vyplněnou žádost.
 ---
