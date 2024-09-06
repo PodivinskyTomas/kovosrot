@@ -33,10 +33,11 @@ export default {
         }
     },
     created() {
-        let date = ZonedDateTime.parse(this.file.frontmatter.creation_date);
-        this.day = this.padStr(date.dayOfMonth());
-        this.month = this.padStr(date.monthValue());
-        this.year = date.year();
+      let dateStr = this.file.file.substring(this.file.file.lastIndexOf('/') + 1, this.file.file.length - '.md'.length)
+      let dateParts = dateStr.split("-");
+      this.year = dateParts[0];
+      this.month = dateParts[1];
+      this.day = dateParts[2];
     },
     methods: {
       padStr(d: number) {
