@@ -23,7 +23,7 @@ table {
     border: 1px solid var(--n4);
     border-collapse: collapse;
     margin: auto;
-    padding: 0rem;
+    padding: 0;
 }
 
 table td {

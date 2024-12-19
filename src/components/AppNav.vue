@@ -99,7 +99,7 @@ nav {
 }
 
 #menu-toggle:checked+.menu-button-container .menu-button::before {
-    margin-top: 0px;
+    margin-top: 0;
     transform: rotate(405deg);
 }
 
@@ -108,7 +108,7 @@ nav {
 }
 
 #menu-toggle:checked+.menu-button-container .menu-button::after {
-    margin-top: 0px;
+    margin-top: 0;
     transform: rotate(-405deg);
 }
 

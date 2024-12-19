@@ -36,7 +36,7 @@ header {
 
 header div h1,
 header div h2 {
-    text-shadow: 0px 0px 10px black;
+    text-shadow: 0 0 10px black;
 }
 
 .header-wrapper__text-wrapper {

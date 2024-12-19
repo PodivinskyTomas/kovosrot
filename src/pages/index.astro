@@ -130,7 +130,9 @@ let faq = faq_data.faq
         <div class="faq_container">
             {faq.map(faq => (
                     <div class="accordion">
-                        <i class="fa-solid fa-caret-down  fa-2xl"" style="color: var(--p1);"></i>
+                        <i class="fa-solid fa-caret-down  fa-2xl" style="color: var(--p1);">
+
+                        </i>
                         {faq.faq_question}
                     </div>
                     <div class="panel">
@@ -179,45 +181,44 @@ let faq = faq_data.faq
             <MapComponent client:visible />
         </div>
     </section>
+    <script is:inline>
+        const menuCheckbox = document.getElementById("menu-toggle");
+        if (menuCheckbox !== null) {
+            const navLinks = document.getElementsByClassName("app-nav__link");
+            for (const link of navLinks) {
+                link.addEventListener(
+                    "click",
+                    () => {
+                        menuCheckbox.checked = !menuCheckbox.checked;
+                    },
+                    { passive: true }
+                );
+            }
+        }
+
+        const showWarningUntil = document.getElementById("show_warning_until");
+        if (showWarningUntil !== null) {
+            const showUntilDate = new Date(showWarningUntil.innerText.trim());
+            if (new Date() < showUntilDate) {
+                const warning = document.getElementById("opening_hours_warning");
+                warning.classList.remove("hidden");
+            }
+        }
+
+        let acc = document.getElementsByClassName("accordion");
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                let panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
 </Layout>
-
-<script is:inline>
-const menuCheckbox = document.getElementById("menu-toggle");
-if (menuCheckbox !== null) {
-    const navLinks = document.getElementsByClassName("app-nav__link");
-    for (const link of navLinks) {
-        link.addEventListener(
-            "click",
-            () => {
-                menuCheckbox.checked = !menuCheckbox.checked;
-            },
-            { passive: true }
-        );
-    }
-}
-
-const showWarningUntil = document.getElementById("show_warning_until");
-if (showWarningUntil !== null) {
-    const showUntilDate = new Date(showWarningUntil.innerText.trim());
-    if (new Date() < showUntilDate) {
-        const warning = document.getElementById("opening_hours_warning");
-        warning.classList.remove("hidden");
-    }
-}
-
-let acc = document.getElementsByClassName("accordion");
-for (let i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    let panel = this.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    } 
-  });
-}
-</script>
 
 <style is:global>
     @import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");

@@ -13,7 +13,6 @@
     </a>
 </template>
 <script lang="ts">
-import {ZonedDateTime} from "@js-joda/core";
 
 export default {
     name: "NewsCard",
@@ -38,14 +37,6 @@ export default {
       this.year = dateParts[0];
       this.month = dateParts[1];
       this.day = dateParts[2];
-    },
-    methods: {
-      padStr(d: number) {
-        if (d < 10) {
-          return `0${d}`;
-        }
-        return d;
-      },
     },
     data() {
         return {
