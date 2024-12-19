@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import InformationTable from "../components/InformationTable.vue";
 import "../styles/global.css";
-import MapComponent from "../components/MapComponent.vue";
 import AppNews from "../components/AppNews.vue";
 import AppWarning from "../components/AppWarning.vue";
 import WhatWeBuyTable from "../components/WhatWeBuyTable.vue";
@@ -165,6 +164,8 @@ let faq = faq_data.faq
                     href="https://www.google.com/maps/place/V%C3%BDkup+kovov%C3%A9ho+odpadu+Litovel/@49.6908301,17.0708025,16.56z/data=!4m6!3m5!1s0x471241dadd90dcef:0x72b3bbfc516c8c64!8m2!3d49.6910708!4d17.0720796!16s%2Fg%2F11shwm46hh?hl=en"
                     >Cholinská 1276/1, 784 01 Litovel</a
                 >
+                <p>IČ: 70011231</p>
+                <p>DIČ: CZ7201145303</p>
             </div>
             <div>
                 <div class="circled">
@@ -177,9 +178,17 @@ let faq = faq_data.faq
                 >
             </div>
         </div>
-        <div class="mapComponent-section">
-            <MapComponent client:visible />
-        </div>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4263.3314339041635!2d17.070393492976102!3d49.692158029962904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471241dadd90dcef%3A0x72b3bbfc516c8c64!2sV%C3%BDkup%20kovov%C3%A9ho%20odpadu%20Litovel!5e0!3m2!1sen!2scz!4v1734619868487!5m2!1sen!2scz"
+            width="600"
+            height="450"
+            style="border:0;"
+            allowfullscreen
+            loading="lazy"
+            title="Mapa, kde můžete najít náš podnik"
+            referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <p><i><small>Živnostenský list vydal městský úřad Litovel č.j. ŽIV/36027/2017/Kr/ŽF</small></i></p>
     </section>
     <script is:inline>
         const menuCheckbox = document.getElementById("menu-toggle");
@@ -229,10 +238,6 @@ let faq = faq_data.faq
     .hidden {
         display: none;
     }
-    .mapComponent-section {
-        height: 300px;
-        margin-bottom: 1rem;
-    }
     .warning {
         margin: 10px auto 10px auto !important;
         width: fit-content;
@@ -254,12 +259,9 @@ let faq = faq_data.faq
         display: flex;
         flex-wrap: wrap;
         margin-bottom: 2rem;
-    }
-    .content__contact__wrapper div {
-        flex: 33%;
+        justify-content: space-evenly;
     }
     .circled {
-        margin: auto;
         background-color: var(--p1);
         color: var(--white);
         --circled-icon-size: 38px;
@@ -267,7 +269,7 @@ let faq = faq_data.faq
         height: var(--circled-icon-size);
         line-height: var(--circled-icon-size);
         border-radius: 100%;
-        margin-bottom: 1rem;
+        margin: auto auto 1rem;
     }
 
     @media only screen and (max-width: 800px) {
@@ -336,5 +338,8 @@ let faq = faq_data.faq
         & p {
             margin: 1em 0;
         }
+    }
+    .p-0 {
+        padding: 0 !important;
     }
 </style>

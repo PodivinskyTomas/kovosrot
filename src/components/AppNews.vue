@@ -30,12 +30,6 @@ export default {
     justify-content: space-evenly;
 }
 
-.news-wrapper>.news-card {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    margin-bottom: 1rem;
-}
-
 .show_all {
     margin-top: 2.5rem;
     display: inline-block;
