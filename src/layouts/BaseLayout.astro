@@ -36,13 +36,17 @@ const metaDescription =
     <body>
         {includeHeader &&
                 <header>
-                    <div class="header-wrapper__text-wrapper" role="img" aria-label="Provozovna" title="Provozovna">
+                    <picture>
+                        <source media="(max-width:465px)" srcset="/header-photo-small.webp" type="image/webp">
+                        <img src="/header-photo.webp" alt="Provozovna">
+                    </picture>
+                    <div class="header-title">
                         <h1>Výkup kovového odpadu Litovel</h1>
                         <h2>Vladimír Podivínský</h2>
                     </div>
                 </header>
         }
-        <nav ref="nav">
+        <nav>
             <a href="/" title="Zpět na hlavní stránku" class="nav__title">
                 <h3>Výkup kovového opadu Litovel</h3>
             </a>
@@ -112,27 +116,40 @@ const metaDescription =
     }
 
     header {
-        background-image: url("/header-photo.webp");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: 30% 50%;
         height: 93vh;
         display: flex;
         justify-content: center;
         align-content: center;
         flex-direction: column;
+        color: white;
+        position: relative;
+
+        & picture {
+            height: 100%;
+        }
+        
+        & picture img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover; /* Equivalent to background-size: cover */
+            object-position: 40% 50%; /* Equivalent to background-position */
+        }
+
+        & .header-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+        }
+        & .header-title h1, h2 {
+            text-shadow: 0 0 10px black;
+            text-align: center;
+            color: var(--white);
+            animation: 1s ease-in 0s 1 textFade;
+        }
     }
 
-    header div h1,
-    header div h2 {
-        text-shadow: 0 0 10px black;
-    }
-
-    .header-wrapper__text-wrapper {
-        text-align: center;
-        color: var(--white);
-        animation: 1s ease-in 0s 1 textFade;
-    }
 
     h1 {
         font-size: 3rem;

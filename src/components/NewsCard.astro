@@ -54,6 +54,8 @@ const title = `Odkaz na aktualitu - ${item.frontmatter.title}`;
         text-align: center;
         width: 4.6875rem;
         height: 4.6875rem;
+        min-width: 4.6875rem;
+        min-height: 4.6875rem;
     }
 
     .news-card__content {
@@ -90,22 +92,5 @@ const title = `Odkaz na aktualitu - ${item.frontmatter.title}`;
 
     b {
         font-size: large;
-    }
-
-    @media screen and (max-width: 450px) {
-        .news-card {
-            width: 100%;
-        }
-
-        .news-card__date_box {
-            display: none;
-        }
-
-        .news-card__content {
-            padding: 0;
-            max-width: 100%;
-            max-height: 100%;
-            text-align: center;
-        }
     }
 </style>

@@ -85,16 +85,16 @@ let faq = faq_data.faq
 ---
 
 <Layout title="Kovošrot Litovel Podivínský" includeHeader={true}>
-        <section class="content__news">
-            <h2 id="aktuality">Aktuality</h2>
-            <div>
-                <div class="news-wrapper">
-                    {news.map((item) => (
-                            <NewsCard item={item} isAll={false} />
-                    ))}
-                </div>
-                <a class="show_all" title="Zobrazit všechny aktuality" href="/aktuality/">Zobrazit vše</a>
+    <section class="content__news">
+        <h2 id="aktuality">Aktuality</h2>
+        <div>
+            <div class="news-wrapper">
+                {news.map((item) => (
+                        <NewsCard item={item} isAll={false} />
+                ))}
             </div>
+            <a class="show_all" title="Zobrazit všechny aktuality" href="/aktuality/">Zobrazit vše</a>
+        </div>
     </section>
     <section class="content__about_us">
         <h2 id="oNás">O nás</h2>
