@@ -17,6 +17,6 @@ collections:
     fields:
       - { label: "Titulek", name: "title", widget: "string" }
       - { label: "Zpráva", name: "body", widget: "text", sanitize_preview: true }
-      - { label: "Datum vytvoření", name: "creation_date", default: ZonedDateTime.now(ZoneId.of("Europe/Prague")).toString(), widget: "hidden" }
+      - { label: "Datum vytvoření (nevyplňovat!)", name: "creation_date", widget: "datetime", default: "{{now}}", date_format: "YYYY-MM-DD" }
       - { label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/Article.astro" }
 

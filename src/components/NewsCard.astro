@@ -9,11 +9,7 @@ const day = dateParts[2];
 const url = `/aktualita/${item.file.substring(item.file.lastIndexOf('/') + 1, item.file.length - '.md'.length)}/`;
 const title = `Odkaz na aktualitu - ${item.frontmatter.title}`;
 ---
-<a rel="prefetch"
-   href={url}
-   title={title}
-   class="news-card"
->
+<a href={url} title={title} class="news-card">
     <div class="news-card__date_box">
         <b>{ day }</b>
         <b>{ month }, { year }</b>

@@ -6,7 +6,7 @@ import { Content } from "../page_texts/about_us.md";
 import { frontmatter } from "../page_texts/what_we_buy.md";
 import { frontmatter as faq_data } from "../page_texts/faq.md";
 import type { MarkdownInstance } from "astro";
-import { actualities, sortArticlesByDate } from "../logic/actualities";
+import { actualities } from "../logic/actualities";
 
 const fetchedActualities = await fetchActualities();
 async function fetchActualities() {

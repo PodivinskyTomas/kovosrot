@@ -3,56 +3,7 @@ import { CMS_COLLECTION_LOCATIONS } from "./src/constants.ts";
 
 // https://astro.build/config
 import sitemap from "@astrojs/sitemap";
-import prefetch from "@astrojs/prefetch";
-import { ZonedDateTime, ZoneId } from "@js-joda/core";
-import * as _ from "@js-joda/timezone";
-import compress from "astro-compress";
-const articleCollection = {
-  name: "article",
-  label: "Aktuality",
-  label_singular: "Aktualita",
-  folder: CMS_COLLECTION_LOCATIONS.ARTICLES,
-  create: true,
-  slug: "{{year}}-{{month}}-{{day}}-{{title}}",
-  description: "Aktuální události. Zobrazují se na stránce hned v první sekci. Pište sem třeba dovolené nebo nějaké velké změny v chodu firmy.",
-  fields: [{
-    label: "Titulek",
-    name: "title",
-    widget: "string"
-  }, {
-    label: "Zpráva",
-    name: "body",
-    widget: "text",
-    sanitize_preview: true
-  }, {
-    label: "Jedná se o změnu pracovní doby?",
-    hint: "Zašktrni pokud se jedná o dovolenou nebo třeba o dřívější konec v práci. Pokud zaškrtneš tohle pole, musíš vyplnit pole ZOBRAZOVAT DO",
-    name: "is_opening_hours_change",
-    widget: "boolean",
-    required: false,
-    default: false
-  }, {
-    label: "Zobrazovat do",
-    name: "show_until",
-    hint: "Do kdy by se mělo zobrazovat upozornění na dovolenou",
-    default: "",
-    date_format: "DD.MM.YYYY",
-    time_format: false,
-    widget: "datetime",
-    required: false,
-    picker_utc: true
-  }, {
-    label: "Datum vytvoření",
-    name: "creation_date",
-    default: ZonedDateTime.now(ZoneId.of("Europe/Prague")).toString(),
-    widget: "hidden"
-  }, {
-    label: "Layout",
-    name: "layout",
-    widget: "hidden",
-    default: "../../layouts/Article.astro"
-  }]
-};
+
 function pageTextsItem(filename) {
   return {
     create: false,
@@ -127,7 +78,5 @@ export default defineConfig({
   site: "https://www.sbernalitovel.cz/",
   integrations: [sitemap({
     filter: page => page !== 'https://www.sbernalitovel.cz/administrace/' && page !== 'https://www.sbernalitovel.cz/administrace'
-  }), prefetch({
-    throttle: 3
-  }), compress()]
+  })]
 });
