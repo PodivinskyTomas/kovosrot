@@ -18,38 +18,6 @@ async function fetchActualities() {
 }
 const news = await actualities(fetchedActualities);
 
-const oldestActiveVacationWarning = loadVacationWarning(fetchedActualities);
-
-let oldestActiveVacationWarningText = null;
-if (oldestActiveVacationWarning !== null) {
-    oldestActiveVacationWarningText =
-        oldestActiveVacationWarning.rawContent.call(this);
-}
-function loadVacationWarning(
-    actualities: MarkdownInstance<Record<string, any>>[]
-) {
-    const actualitiesFromOldest = actualities
-        .filter(
-            (actuality) =>
-                actuality.frontmatter.is_opening_hours_change === true
-        )
-        .sort((file1, file2) =>
-            sortArticlesByDate(
-                file1.frontmatter.show_until,
-                file2.frontmatter.show_until
-            )
-        )
-        .reverse();
-
-    const currentDate = new Date();
-    for (const oldestActuality of actualitiesFromOldest) {
-        if (currentDate < new Date(oldestActuality.frontmatter.show_until)) {
-            return oldestActuality;
-        }
-    }
-    return null;
-}
-
 const openingHours: string[][] = loadOpeningHours();
 function loadOpeningHours(this: any) {
     const openingHoursFile = fetchOpeningHoursFile();
