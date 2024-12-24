@@ -4,6 +4,8 @@ import { CMS_COLLECTION_LOCATIONS } from "./src/constants.ts";
 // https://astro.build/config
 import sitemap from "@astrojs/sitemap";
 
+import icon from "astro-icon";
+
 function pageTextsItem(filename) {
   return {
     create: false,
@@ -78,5 +80,5 @@ export default defineConfig({
   site: "https://www.sbernalitovel.cz/",
   integrations: [sitemap({
     filter: page => page !== 'https://www.sbernalitovel.cz/administrace/' && page !== 'https://www.sbernalitovel.cz/administrace'
-  })]
+  }), icon()]
 });

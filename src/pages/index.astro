@@ -5,8 +5,18 @@ import NewsCard from "../components/NewsCard.astro";
 import { Content } from "../page_texts/about_us.md";
 import { frontmatter } from "../page_texts/what_we_buy.md";
 import { frontmatter as faq_data } from "../page_texts/faq.md";
-import type { MarkdownInstance } from "astro";
 import { actualities } from "../logic/actualities";
+import { library, icon } from "@fortawesome/fontawesome-svg-core";
+import { faEnvelope, faLocationDot, faPhone, faCaretDown } from "@fortawesome/free-solid-svg-icons";
+
+// Declare all the icons you plan on using
+library.add(faEnvelope, faLocationDot, faPhone, faCaretDown);
+
+// Instantiate the icon with the icon function
+const locationDot = icon({ prefix: "fas", iconName: faLocationDot.iconName });
+const envelope = icon({ prefix: "fas", iconName: faEnvelope.iconName });
+const phone = icon({ prefix: "fas", iconName: faPhone.iconName });
+const arrowDown = icon({ prefix: "fas", iconName: faCaretDown.iconName });
 
 const fetchedActualities = await fetchActualities();
 async function fetchActualities() {
@@ -108,9 +118,7 @@ let faq = faq_data.faq
         <div class="faq_container">
             {faq.map(faq => (
                     <div class="accordion">
-                        <i class="fa-solid fa-caret-down  fa-2xl" style="color: var(--p1);">
-
-                        </i>
+                        <Fragment set:html={arrowDown.html} />
                         {faq.faq_question}
                     </div>
                     <div class="panel">
@@ -124,7 +132,7 @@ let faq = faq_data.faq
         <div class="content__contact__wrapper">
             <div>
                 <div class="circled">
-                    <i class="fa-regular fa-envelope"></i>
+                    <Fragment set:html={envelope.html} />
                 </div>
                 <p><b>E-mail</b></p>
                 <a
@@ -135,7 +143,7 @@ let faq = faq_data.faq
             </div>
             <div>
                 <div class="circled">
-                    <i class="fa-solid fa-location-dot"></i>
+                    <Fragment set:html={locationDot.html} />
                 </div>
                 <p><b>Adresa</b></p>
                 <a
@@ -148,7 +156,7 @@ let faq = faq_data.faq
             </div>
             <div>
                 <div class="circled">
-                    <i class="fa-solid fa-phone"></i>
+                    <Fragment set:html={phone.html} />
                 </div>
                 <p><b>Telefon</b></p>
                 <p>(zde volejte pro aktuální ceny)</p>
@@ -172,8 +180,6 @@ let faq = faq_data.faq
 </Layout>
 
 <style is:global>
-    @import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
-
     .what_we_buy_paragraph {
         margin-top: 1rem !important;
     }
@@ -348,5 +354,18 @@ let faq = faq_data.faq
 
     .information-table__row :first-child {
         font-weight: bold;
+    }
+
+    .svg-inline--fa {
+        overflow: visible;
+        box-sizing: content-box;
+        display: inline-block;
+        height: 1em;
+        vertical-align: -0.125em;
+    }
+    .fa-caret-down {
+        color: var(--p1);
+        width: 1.5rem;
+        height: 1.5rem;
     }
 </style>
