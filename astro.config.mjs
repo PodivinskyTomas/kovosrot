@@ -1,12 +1,9 @@
 import { defineConfig } from 'astro/config';
-import NetlifyCMS from 'astro-netlify-cms';
 import { CMS_COLLECTION_LOCATIONS } from "./src/constants.ts";
 
 // https://astro.build/config
-import vue from "@astrojs/vue";
 import sitemap from "@astrojs/sitemap";
 import prefetch from "@astrojs/prefetch";
-import purgecss from "astro-purgecss";
 import { ZonedDateTime, ZoneId } from "@js-joda/core";
 import * as _ from "@js-joda/timezone";
 import compress from "astro-compress";
@@ -128,22 +125,9 @@ const pageTexts = {
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.sbernalitovel.cz/",
-  integrations: [NetlifyCMS({
-    previewStyles: [],
-    adminPath: "/administrace",
-    disableIdentityWidgetInjection: true,
-    config: {
-      locale: "cs",
-      search: false,
-      backend: {
-        name: 'git-gateway',
-        branch: 'master'
-      },
-      collections: [articleCollection, pageTexts]
-    }
-  }), vue(), sitemap({
+  integrations: [sitemap({
     filter: page => page !== 'https://www.sbernalitovel.cz/administrace/' && page !== 'https://www.sbernalitovel.cz/administrace'
   }), prefetch({
     throttle: 3
-  }), purgecss(), compress()]
+  }), compress()]
 });

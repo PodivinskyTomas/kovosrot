@@ -1,0 +1,22 @@
+media_folder: "src/images" # Location where files will be stored in the repo
+public_folder: "src/public" # The src attribute for uploaded media
+backend:
+  name: git-gateway
+  branch: master
+
+locale: 'cs'
+
+collections:
+  - label: "Aktuality"
+    name: "article"
+    label_singular: "Aktualita"
+    folder: "src/pages/aktualita"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{title}}"
+    description: "Aktuální události. Zobrazují se na stránce hned v první sekci. Pište sem třeba dovolené nebo nějaké velké změny v chodu firmy."
+    fields:
+      - { label: "Titulek", name: "title", widget: "string" }
+      - { label: "Zpráva", name: "body", widget: "text", sanitize_preview: true }
+      - { label: "Datum vytvoření", name: "creation_date", default: ZonedDateTime.now(ZoneId.of("Europe/Prague")).toString(), widget: "hidden" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/Article.astro" }
+
