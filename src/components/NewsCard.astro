@@ -1,6 +1,5 @@
 ---
 const { isAll, item } = Astro.props;
-console.log(item)
 
 let dateStr = item.file.substring(item.file.lastIndexOf('/') + 1, item.file.length - '.md'.length)
 let dateParts = dateStr.split("-");

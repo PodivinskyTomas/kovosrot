@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
 
 const actualities = (
-    (await Astro.glob("../pages/aktualita/*.md")) ?? []
+    (Object.values(import.meta.glob("../pages/aktualita/*.md", { eager: true }))) ?? []
 ).reverse();
 ---
 
@@ -22,7 +22,7 @@ const actualities = (
     </section>
 </Layout>
 
-<style global>
+<style is:global>
     :root {
         --nav-height: calc(calc(0.28125rem * 2 + 48px) * 2);
         --footer-height: calc(2rem + 3em);

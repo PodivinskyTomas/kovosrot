@@ -5,16 +5,16 @@ import "../styles/global.css";
 import NewsCard from "../components/NewsCard.astro";
 import AppWarning from "../components/AppWarning.vue";
 import WhatWeBuyTable from "../components/WhatWeBuyTable.vue";
-import { Content } from "../content/page_texts/about_us.md";
-import { frontmatter } from "../content/page_texts/what_we_buy.md";
-import { frontmatter as faq_data } from "../content/page_texts/faq.md";
+import { Content } from "../page_texts/about_us.md";
+import { frontmatter } from "../page_texts/what_we_buy.md";
+import { frontmatter as faq_data } from "../page_texts/faq.md";
 import type { MarkdownInstance } from "astro";
 import { actualities, sortArticlesByDate } from "../logic/actualities";
 
 const fetchedActualities = await fetchActualities();
 async function fetchActualities() {
     try {
-        return await Astro.glob("../pages/aktualita/*.md");
+        return Object.values(import.meta.glob("../pages/aktualita/*.md", { eager: true }));
     } catch (e) {
         return [];
     }
@@ -53,16 +53,16 @@ function loadVacationWarning(
     return null;
 }
 
-const openingHours: string[][] = await loadOpeningHours();
-async function loadOpeningHours(this: any) {
-    const openingHoursFile = await fetchOpeningHoursFile();
+const openingHours: string[][] = loadOpeningHours();
+function loadOpeningHours(this: any) {
+    const openingHoursFile = fetchOpeningHoursFile();
     const fileContent = openingHoursFile.rawContent.call(this);
 
     return extractOpeningHoursRows(fileContent);
 }
 
-async function fetchOpeningHoursFile() {
-    return (await Astro.glob("../content/page_texts/provozni_doba.md"))[0];
+function fetchOpeningHoursFile() {
+    return Object.values(import.meta.glob("../page_texts/provozni_doba.md", { eager: true }))[0];
 }
 
 function extractOpeningHoursRows(fileContent: string) {
