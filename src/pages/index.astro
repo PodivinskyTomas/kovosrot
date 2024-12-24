@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import InformationTable from "../components/InformationTable.vue";
 import "../styles/global.css";
-import AppNews from "../components/AppNews.vue";
+import NewsCard from "../components/NewsCard.astro";
 import AppWarning from "../components/AppWarning.vue";
 import WhatWeBuyTable from "../components/WhatWeBuyTable.vue";
 import { Content } from "../content/page_texts/about_us.md";
@@ -85,14 +85,17 @@ let faq = faq_data.faq
 ---
 
 <Layout title="Kovošrot Litovel Podivínský" includeHeader={true}>
-    {
-        news != null && news.length > 0 && (
-            <section class="content__news">
-                <h2 id="aktuality">Aktuality</h2>
-                <AppNews files={news} />
-            </section>
-        )
-    }
+        <section class="content__news">
+            <h2 id="aktuality">Aktuality</h2>
+            <div>
+                <div class="news-wrapper">
+                    {news.map((item) => (
+                            <NewsCard item={item} isAll={false} />
+                    ))}
+                </div>
+                <a class="show_all" title="Zobrazit všechny aktuality" href="/aktuality/">Zobrazit vše</a>
+            </div>
+    </section>
     <section class="content__about_us">
         <h2 id="oNás">O nás</h2>
         <Content class="about_us_text" />
@@ -182,7 +185,7 @@ let faq = faq_data.faq
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4263.3314339041635!2d17.070393492976102!3d49.692158029962904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471241dadd90dcef%3A0x72b3bbfc516c8c64!2sV%C3%BDkup%20kovov%C3%A9ho%20odpadu%20Litovel!5e0!3m2!1sen!2scz!4v1734619868487!5m2!1sen!2scz"
             width="600"
             height="450"
-            style="border:0;"
+            style="border:0; max-width: 100%;"
             allowfullscreen
             loading="lazy"
             title="Mapa, kde můžete najít náš podnik"
@@ -341,5 +344,31 @@ let faq = faq_data.faq
     }
     .p-0 {
         padding: 0 !important;
+    }
+    .news-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        justify-content: space-evenly;
+    }
+
+    .show_all {
+        margin-top: 2.5rem;
+        display: inline-block;
+        border-radius: 12px;
+        color: var(--n1);
+        border: 1px solid var(--p1);
+        background-color: var(--white);
+        text-decoration: none;
+        font-weight: bold;
+        padding: 10px 28px;
+        height: 1.5rem;
+        line-height: 1.5rem;
+        transition: 0.4s ease;
+    }
+
+    .show_all:hover {
+        color: var(--white);
+        background-color: var(--p1);
     }
 </style>

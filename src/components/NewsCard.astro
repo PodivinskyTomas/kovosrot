@@ -1,0 +1,111 @@
+---
+const { isAll, item } = Astro.props;
+console.log(item)
+
+let dateStr = item.file.substring(item.file.lastIndexOf('/') + 1, item.file.length - '.md'.length)
+let dateParts = dateStr.split("-");
+const year = dateParts[0];
+const month = dateParts[1];
+const day = dateParts[2];
+const url = `/aktualita/${item.file.substring(item.file.lastIndexOf('/') + 1, item.file.length - '.md'.length)}/`;
+const title = `Odkaz na aktualitu - ${item.frontmatter.title}`;
+---
+<a rel="prefetch"
+   href={url}
+   title={title}
+   class="news-card"
+>
+    <div class="news-card__date_box">
+        <b>{ day }</b>
+        <b>{ month }, { year }</b>
+    </div>
+    <div class={ isAll ? 'news-card__content rem-60' : 'news-card__content rem-12-5' }>
+        <h3>{ item.frontmatter.title }</h3>
+        <p class={ isAll ? 'one-line' : 'two-line' }>{ item.rawContent.call(this) }</p>
+    </div>
+</a>
+
+<style>
+    .news-card {
+        background-color: var(--white);
+        border-radius: 12px;
+        padding: 1.5rem;
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+        word-wrap: break-word;
+        transition: 0.4s ease;
+        text-decoration: none;
+        color: black;
+    }
+
+    .news-card:hover {
+        box-shadow: 0 0 10px 0 grey;
+    }
+
+    .news-card__date_box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: var(--p1);
+        color: var(--white);
+        padding: 0.5rem;
+        border-radius: 12px;
+        text-align: center;
+        width: 4.6875rem;
+        height: 4.6875rem;
+    }
+
+    .news-card__content {
+        padding: 0.5rem 0 0.5rem 1.5rem;
+        text-align: left;
+        max-height: 4.6875rem;
+    }
+
+    .rem-60 {
+        max-width: 80%;
+    }
+
+    .rem-12-5 {
+        max-width: 12.5rem;
+    }
+
+    .news-card__content h3 {
+        margin-bottom: 0.5rem;
+    }
+
+    .one-line {
+        -webkit-line-clamp: 1;
+    }
+
+    .two-line {
+        -webkit-line-clamp: 2;
+    }
+
+    .news-card__content p {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+    }
+
+    b {
+        font-size: large;
+    }
+
+    @media screen and (max-width: 450px) {
+        .news-card {
+            width: 100%;
+        }
+
+        .news-card__date_box {
+            display: none;
+        }
+
+        .news-card__content {
+            padding: 0;
+            max-width: 100%;
+            max-height: 100%;
+            text-align: center;
+        }
+    }
+</style>

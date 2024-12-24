@@ -1,5 +1,5 @@
 ---
-import NewsCard from "../components/NewsCard.vue";
+import NewsCard from "../components/NewsCard.astro";
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
 
@@ -15,20 +15,18 @@ const actualities = (
         <div class="news_cards">
             {
                 actualities.map(async (entry) => {
-                    return <NewsCard is-all-list={true} file={entry} />;
+                    return <NewsCard isAll={true} item={entry} />;
                 })
             }
         </div>
     </section>
 </Layout>
 
-<style>
+<style global>
     :root {
         --nav-height: calc(calc(0.28125rem * 2 + 48px) * 2);
         --footer-height: calc(2rem + 3em);
-        --min-height: calc(
-            100vh - var(--nav-height) - var(--footer-height) - 1rem
-        );
+        --min-height: calc(100vh - var(--nav-height) - var(--footer-height) - 1rem);
     }
     section {
         text-align: left;
