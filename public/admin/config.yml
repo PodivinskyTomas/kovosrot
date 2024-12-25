@@ -19,4 +19,48 @@ collections:
       - { label: "Zpráva", name: "body", widget: "text", sanitize_preview: true }
       - { label: "Datum vytvoření (nevyplňovat!)", name: "creation_date", widget: "datetime", default: "{{now}}", date_format: "YYYY-MM-DD" }
       - { label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/Article.astro" }
-
+  - name: "page_texts"
+    label: "Texty na stránce"
+    description: "Nastavení textů v jednotlivých sekcích stránky"
+    files:
+      - name: "provozni_doba"
+        label: "Provozní doba"
+        slug: "Provozní doba"
+        create: false
+        delete: false
+        file: src/page_texts/provozni_doba.md
+        fields:
+          - { label: "Text", name: "body", widget: "text", sanitize_preview: true }
+      - name: "about_us"
+        label: "O nás"
+        slug: "O nás"
+        create: false
+        delete: false
+        file: src/page_texts/about_us.md
+        fields:
+        - { label: "Text", name: "body", widget: "text", sanitize_preview: true }
+      - name: "what_we_buy"
+        label: "Co vykupujeme?"
+        slug: "Co vykupujeme?"
+        create: false
+        delete: false
+        file: src/page_texts/what_we_buy.md
+        fields:
+            - { label: "Seznam vykupovaného zboží", name: "list", widget: "list" }
+      - name: "faq"
+        label: "Často kladené otázky"
+        slug: "Často kladené otázky"
+        create: false
+        delete: false
+        file: src/page_texts/faq.md
+        fields:
+          - label: "Často kladená otázka"
+            name: "faq"
+            widget: "list"
+            fields:
+              - label: "Otázka"
+                name: "faq_question"
+                widget: "text"
+              - label: "Odpověď"
+                name: "faq_answer"
+                widget: "text"
