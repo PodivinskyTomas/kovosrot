@@ -98,8 +98,8 @@ let faq = faq_data.faq
             </p>
         </div>
     </section>
-    <section class="content__about_us">
-        <h2 id="co-vykupujeme" class="about_us_text">Co vykupujeme?</h2>
+    <section>
+        <h2 id="co-vykupujeme">Co vykupujeme?</h2>
         <table>
             <tbody>
             {rows.map((row) => (
@@ -116,7 +116,7 @@ let faq = faq_data.faq
         </p>
     </section>
     <section>
-        <h2 id="faq" class="about_us_text">{faqTitle}</h2>
+        <h2 id="faq">{faqTitle}</h2>
         <div class="faq_container">
             {faq.map(faq => (
                     <div class="accordion">
@@ -224,6 +224,7 @@ let faq = faq_data.faq
         margin-bottom: 0.8rem;
     }
     .content__about_us p {
+        text-align: justify;
         width: 50%;
         margin: auto;
     }
@@ -273,7 +274,6 @@ let faq = faq_data.faq
     @media only screen and (max-width: 600px) {
         .content__about_us p {
             width: 100%;
-            margin: auto;
         }
     }
 

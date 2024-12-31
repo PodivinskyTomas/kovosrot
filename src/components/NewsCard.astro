@@ -11,7 +11,7 @@ const title = `Odkaz na aktualitu - ${item.frontmatter.title}`;
 ---
 <a href={url} title={title} class="news-card">
     <div class="news-card__date_box">
-        <b style="font-size: large; text-shadow: 0 0 2px black;">
+        <b>
             { day }<br>
             { month }, { year }
         </b>
@@ -54,6 +54,11 @@ const title = `Odkaz na aktualitu - ${item.frontmatter.title}`;
         height: 4.6875rem;
         min-width: 4.6875rem;
         min-height: 4.6875rem;
+
+        & b {
+            font-size: large;
+            text-shadow: 0 0 2px black;
+        }
     }
 
     .news-card__content {
