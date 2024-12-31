@@ -177,6 +177,34 @@ let faq = faq_data.faq
         ></iframe>
         <p><i><small>Živnostenský list vydal městský úřad Litovel č.j. ŽIV/36027/2017/Kr/ŽF</small></i></p>
     </section>
+    <script>
+        const menuCheckbox = document.getElementById("menu-toggle");
+        if (menuCheckbox !== null) {
+            const navLinks = document.getElementsByClassName("app-nav__link");
+            for (const link of navLinks) {
+                link.addEventListener(
+                    "click",
+                    () => {
+                        menuCheckbox.checked = !menuCheckbox.checked;
+                    },
+                    { passive: true }
+                );
+            }
+        }
+
+        let acc = document.getElementsByClassName("accordion");
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                let panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
 </Layout>
 
 <style is:global>
