@@ -40,14 +40,15 @@ const metaDescription =
         {includeHeader &&
                 <header>
                     <Image
-                            fetchpriority="high"
                             class="header-image"
-                            src={headerImage}
                             alt="Fotografie provozovny kovošrot Litovel"
+                            src={headerImage}
                             widths={[470, 350, headerImage.width]}
                             height="900"
                             sizes={`(max-width: 470px) 470px, (max-width: 350px) 350px, ${headerImage.width}px`}
+                            decoding='sync'
                             loading='eager'
+                            fetchpriority="high"
                     />
                     <div class="header-title">
                         <h1>Výkup kovového odpadu Litovel</h1>
@@ -152,6 +153,7 @@ const metaDescription =
         height: 100%;
         object-fit: cover;
         object-position: 40% 50%;
+        aspect-ratio: 16/9;
     }
 
 
