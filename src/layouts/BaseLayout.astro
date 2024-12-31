@@ -40,11 +40,13 @@ const metaDescription =
         {includeHeader &&
                 <header>
                     <Image
+                            fetchpriority="high"
                             class="header-image"
                             src={headerImage}
                             alt="Fotografie provozovny kovošrot Litovel"
-                            widths={[470, headerImage.width]}
-                            sizes={`(max-width: 470px) 470px, ${headerImage.width}px`}
+                            widths={[470, 350, headerImage.width]}
+                            height="900"
+                            sizes={`(max-width: 470px) 470px, (max-width: 350px) 350px, ${headerImage.width}px`}
                             loading='eager'
                     />
                     <div class="header-title">
@@ -63,9 +65,9 @@ const metaDescription =
             </label>
             <div class="menu">
                 <a href="/#aktuality" title="Odkaz na sekci aktuality" class="app-nav__link">Aktuality</a>
-                <a href="/#oNás" title="Odkaz na sekci o nás" class="app-nav__link">O nás</a>
-                <a href="/#provozníDoba" title="Odkaz na sekci provozní doba" class="app-nav__link">Provozní doba</a>
-                <a href="/#coVykupujeme" title="Odkaz na sekci seznam vykupovaného zboží" class="app-nav__link">Co
+                <a href="/#o-nás" title="Odkaz na sekci o nás" class="app-nav__link">O nás</a>
+                <a href="/#provozní-doba" title="Odkaz na sekci provozní doba" class="app-nav__link">Provozní doba</a>
+                <a href="/#co-vykupujeme" title="Odkaz na sekci seznam vykupovaného zboží" class="app-nav__link">Co
                     vykupujeme</a>
                 <a href="/#faq" title="Často kladené otázky" class="app-nav__link">Často kladené otázky</a>
                 <a href="/#kontakt" title="Odkaz na sekci kontakt" class="app-nav__link">Kontakt</a>
