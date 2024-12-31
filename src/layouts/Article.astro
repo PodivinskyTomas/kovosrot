@@ -11,7 +11,7 @@ const dateParts = date.split(".");
 const finalDate = `${dateParts[2]}.${dateParts[1]}.${dateParts[0]}`;
 ---
 
-<BaseLayout includeHeader={false} title={title}>
+<BaseLayout includeHeader={false} title={title} includeInSearchEngines={false}>
     <article>
         <div class="row">
             <h2>{frontmatter.title}</h2>

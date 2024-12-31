@@ -2,9 +2,10 @@
 export interface Props {
     title: string;
     includeHeader?: boolean;
+    includeInSearchEngines?: boolean;
 }
 
-const { title, includeHeader = false } = Astro.props;
+const { title, includeHeader = false, includeInSearchEngines = true } = Astro.props;
 
 import { Image } from 'astro:assets';
 import headerImage from '../images/header-photo.webp'; // Image is 1600x900
@@ -34,6 +35,9 @@ const metaDescription =
 
         <meta property="og:title" content={title} />
         <link rel="icon" type="image/ico" href="/favicon.ico" />
+        {!includeInSearchEngines &&
+                <meta name="robots" content="noindex">
+        }
         <title>{title}</title>
     </head>
     <body>
