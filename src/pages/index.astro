@@ -8,6 +8,8 @@ import { frontmatter as faq_data } from "../page_texts/faq.md";
 import { actualities } from "../logic/actualities";
 import { library, icon } from "@fortawesome/fontawesome-svg-core";
 import { faEnvelope, faLocationDot, faPhone, faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import GoogleMap from "../components/GoogleMap.astro";
+import mapImageSrc from '../images/map.webp';
 
 // Declare all the icons you plan on using
 library.add(faEnvelope, faLocationDot, faPhone, faCaretDown);
@@ -165,16 +167,13 @@ let faq = faq_data.faq
                 >
             </div>
         </div>
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4263.3314339041635!2d17.070393492976102!3d49.692158029962904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471241dadd90dcef%3A0x72b3bbfc516c8c64!2sV%C3%BDkup%20kovov%C3%A9ho%20odpadu%20Litovel!5e0!3m2!1sen!2scz!4v1734619868487!5m2!1sen!2scz"
-            width="600"
-            height="450"
-            style="border:0; max-width: 100%;"
-            allowfullscreen
-            loading="lazy"
-            title="Mapa, kde můžete najít náš podnik"
-            referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+        <GoogleMap
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4263.3314339041635!2d17.070393492976102!3d49.692158029962904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471241dadd90dcef%3A0x72b3bbfc516c8c64!2sV%C3%BDkup%20kovov%C3%A9ho%20odpadu%20Litovel!5e0!3m2!1sen!2scz!4v1734619868487!5m2!1sen!2scz"
+                width={600}
+                height={450}
+                title="Mapa, kde můžete najít náš podnik"
+                placeholder={mapImageSrc}
+        />
         <p><i><small>Živnostenský list vydal městský úřad Litovel č.j. ŽIV/36027/2017/Kr/ŽF</small></i></p>
     </section>
     <script>

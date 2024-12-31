@@ -1,0 +1,39 @@
+---
+import { Image } from 'astro:assets';
+
+export interface Props {
+    src: string;
+    width: number;
+    height: number;
+    title: string;
+    placeholder: ImageMetadata;
+}
+
+const { src, width, height, title, placeholder } = Astro.props;
+---
+<Image
+        id="google-map-placeholder"
+        alt={title}
+        src={placeholder}
+        widths={[width]}
+        height={height}
+        sizes={`${width}px`}
+/>
+<script define:vars={{src, width, height, title}}>
+    window.addEventListener('load',
+        function(e) {
+            const map = document.getElementById('google-map-placeholder');
+
+            const frame = document.createElement('iframe');
+            frame.src = src;
+            frame.width = width;
+            frame.height = height;
+            frame.title = title;
+            frame.allowFullscreen = true;
+            frame.loading = "lazy";
+            frame.referrerPolicy = "no-referrer-when-downgrade";
+            frame.style.border = "0";
+
+            map.replaceWith(frame);
+        });
+</script>

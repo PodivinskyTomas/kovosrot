@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import headerImage from '../images/header-photo.webp'; // Image is 1600x900
+
 export interface Props {
     title: string;
     includeHeader?: boolean;
@@ -6,9 +9,6 @@ export interface Props {
 }
 
 const { title, includeHeader = false, includeInSearchEngines = true } = Astro.props;
-
-import { Image } from 'astro:assets';
-import headerImage from '../images/header-photo.webp'; // Image is 1600x900
 
 const metaDescription =
     "Kovošrot Vladimír Podivínský je rodinná vykupující železo a barevné kovy. Můžete nás nalézt ve mestě Litovel na ulici Cholinská 1276/1.";
