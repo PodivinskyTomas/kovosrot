@@ -18,6 +18,7 @@ const { src, width, height, title, placeholder } = Astro.props;
         widths={[width]}
         height={height}
         sizes={`${width}px`}
+        style="max-width: 100%"
 />
 <script define:vars={{src, width, height, title}}>
     window.addEventListener('load',
@@ -33,6 +34,7 @@ const { src, width, height, title, placeholder } = Astro.props;
             frame.loading = "lazy";
             frame.referrerPolicy = "no-referrer-when-downgrade";
             frame.style.border = "0";
+            frame.style.maxWidth = "100%"
 
             map.replaceWith(frame);
         });
