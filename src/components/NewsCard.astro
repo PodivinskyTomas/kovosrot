@@ -11,8 +11,10 @@ const title = `Odkaz na aktualitu - ${item.frontmatter.title}`;
 ---
 <a href={url} title={title} class="news-card">
     <div class="news-card__date_box">
-        <b>{ day }</b>
-        <b>{ month }, { year }</b>
+        <b style="font-size: large; text-shadow: 0 0 2px black;">
+            { day }<br>
+            { month }, { year }
+        </b>
     </div>
     <div class={ isAll ? 'news-card__content rem-60' : 'news-card__content rem-12-5' }>
         <h3>{ item.frontmatter.title }</h3>
@@ -22,6 +24,7 @@ const title = `Odkaz na aktualitu - ${item.frontmatter.title}`;
 
 <style>
     .news-card {
+        margin-top: 1rem;
         background-color: var(--white);
         border-radius: 12px;
         padding: 1.5rem;
