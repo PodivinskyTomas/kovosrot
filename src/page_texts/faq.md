@@ -39,4 +39,10 @@ faq:
 
 
       Barevné kovy vážíme na 0.5 kg.
+  - faq_question: Může odpad obsahovat příměsi? (dřevo, plast, sklo, gumu, beton, papír)
+    faq_answer: Vykupujeme pouze železo a barevné kovy zbavené všech nečistot a
+      příměsí. Nevykupujeme a nepřebíráme k likvidaci dřevo, plast, sklo, gumu,
+      beton, papír a uzavřené tlakové nádoby.
+  - faq_question: Vykupujete jízdní kola s pláštěm?
+    faq_answer: Vykupujeme jen čisté železo a barevné kovy.
 ---
