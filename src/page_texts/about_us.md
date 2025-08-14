@@ -1,4 +1,4 @@
 ---
 title: O nás
 ---
-Jsme rodinná firma založená 1. 2. 2000, provozující sběrné suroviny a kovošrot. Můžete nás nalézt v Litovli na ulici Cholinská 1276/1 (hned vedle autobazaru Truxa). Rádi vykoupíme Váš kovový odpad za výhodnou cenu.
+Provozujeme sběrné suroviny a kovošrot. Vykupujeme železo a barevné kovy. Sběrna je vybavena mostovou váhou o váživosti 30 tun a dvěma malými digitálními váhami. Těžká břemena složíme vysokozdvižným vozíkem do 3, 5 tuny. Rychlá platba bankovním převodem.
