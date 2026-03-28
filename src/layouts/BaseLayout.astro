@@ -47,12 +47,19 @@ const metaDescription =
                             class="header-image"
                             alt="Fotografie provozovny kovošrot Litovel"
                             src={headerImage}
-                            widths={[470, 350, headerImage.width]}
-                            height="900"
-                            sizes={`(max-width: 470px) 470px, (max-width: 350px) 350px, ${headerImage.width}px`}
-                            decoding='sync'
-                            loading='eager'
+                            format="webp"
+                            quality={70}
+                            widths={[350, 470, 768, 1024, 1440, headerImage.width]}
+                            height={900}
+                            sizes="(max-width: 350px) 100vw,
+                            (max-width: 470px) 100vw,
+                            (max-width: 768px) 768px,
+                            (max-width: 1024px) 1024px,
+                            1440px"
+                            loading="eager"
                             fetchpriority="high"
+                            preload
+                            decoding="sync"
                     />
                     <div class="header-title">
                         <h1>Výkup kovového odpadu Litovel</h1>
