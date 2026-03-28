@@ -13,8 +13,8 @@ const title = `Odkaz na aktualitu - ${item.frontmatter.title}`;
     <div class="news-card__date_box">
         <b>
             { day }<br>
-            { month }, { year }
         </b>
+        { month } { year }
     </div>
     <div class={ isAll ? 'news-card__content rem-60' : 'news-card__content rem-12-5' }>
         <h3>{ item.frontmatter.title }</h3>
@@ -35,10 +35,11 @@ const title = `Odkaz na aktualitu - ${item.frontmatter.title}`;
         transition: 0.4s ease;
         text-decoration: none;
         color: black;
+        box-shadow: 0 0 6px 0 grey;
     }
 
     .news-card:hover {
-        box-shadow: 0 0 10px 0 grey;
+        box-shadow: 0 0 12px 0 grey;
     }
 
     .news-card__date_box {
@@ -62,7 +63,7 @@ const title = `Odkaz na aktualitu - ${item.frontmatter.title}`;
     }
 
     .news-card__content {
-        padding: 0.5rem 0 0.5rem 1.5rem;
+        padding: 0 0 0.5rem 1.3rem;
         text-align: left;
         max-height: 4.6875rem;
     }

@@ -22,9 +22,9 @@ faq:
       proběhne do následujícího dne.
   - faq_question: Odvezete nám kovový odpad z domu?
     faq_answer: Ne, odvoz kovového odpadu zajišťujeme pouze pro firmy.
-  - faq_question: Vezu kamarádovy odpady, stačí jeho občanka?
+  - faq_question: Vezu odpady kamaráda. Stačí jeho občanský průkaz?
     faq_answer: Ne, při výkupu musí doložit občanku osoba, která odpad přivezla.
-  - faq_question: Potvrdíte mi ekologickou ilikvidaci kotle?
+  - faq_question: Potvrdíte mi ekologickou likvidaci kotle?
     faq_answer: Ano, žádosti vyřizujeme v pracovní dny od pondělí do pátku (soboty
       potvrzení nevydáváme). Musíte mít s sebou vyplněnou žádost.
   - faq_question: Jak vážíte kovy?
