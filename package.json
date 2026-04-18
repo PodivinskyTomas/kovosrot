@@ -11,12 +11,12 @@
         "astro": "astro"
     },
     "dependencies": {
-        "@astrojs/netlify": "^7.0.4",
+        "@astrojs/netlify": "^7.0.7",
         "@astrojs/sitemap": "^3.7.1",
         "@fortawesome/fontawesome-svg-core": "^6.7.2",
         "@fortawesome/free-solid-svg-icons": "^6.7.2",
         "@iconify-json/mdi": "^1.2.2",
-        "astro": "6.0.8",
+        "astro": "^6.1.8",
         "sharp": "^0.33.5"
     },
     "devDependencies": {
